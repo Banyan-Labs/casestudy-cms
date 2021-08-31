@@ -3,12 +3,12 @@ import { ModalContainer, Content } from './style';
 import './style.js';
 
 
-const SignUpModal = ({ type }) => {
+const SignUpModal = ({ modalType }) => {
 
     return (
         <ModalContainer>
             <Content>
-                {type === 1 ? <div>
+                {modalType === 1 ? <div>
                     <h1>Sign Up For An Account</h1>
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email" required />

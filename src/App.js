@@ -1,13 +1,11 @@
 import './App.css';
-import ReactDOM from 'react-dom';
-
-import SignUpModal from './components/SignUpModal';
+import SignUpModal from './components/SignUpModal/SignInUpModal';
 
 
 function App() {
   return (
     <div>
-      <SignUpModal type={1} />
+      <SignUpModal modalType={1} />
       
     </div>
   );
