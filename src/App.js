@@ -1,6 +1,4 @@
-import './App.css';
 import SignUpModal from './components/SignUpModal/SignInUpModal';
-
 
 function App() {
   return (

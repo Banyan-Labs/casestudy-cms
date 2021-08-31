@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 export const ModalContainer = styled.div`
     display: flex;
     justify-content: center;
-    
 `;
 
 export const Content = styled.div`
@@ -12,7 +11,6 @@ export const Content = styled.div`
     height: 40vh;
     width: 400px;
     display: flex;
-    
     z-index: 1;
     text-align: center;
     h1 {
@@ -32,6 +30,4 @@ export const Content = styled.div`
         margin-left: 30%;
         background-color: #9fb5d5;
     }
-
 `;
-

@@ -2,7 +2,6 @@ import React from "react";
 import { ModalContainer, Content } from './style';
 import './style.js';
 
-
 const SignUpModal = ({ modalType }) => {
 
     return (
