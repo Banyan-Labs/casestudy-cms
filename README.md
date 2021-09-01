@@ -10,4 +10,3 @@ Technologies: -React
               -MongoDB
               -Express
               -CSS
-              
