@@ -1,6 +1,7 @@
 import React from "react";
 import { ModalContainer, Content } from './style';
 import './style.js';
+import PropTypes from 'prop-types';
 
 const SignUpModal = ({ modalType }) => {
 
@@ -35,6 +36,10 @@ const SignUpModal = ({ modalType }) => {
         </ModalContainer>
 
     )
+}
+
+SignUpModal.propTypes = {
+    modalType: PropTypes.string
 }
 
 export default SignUpModal;
