@@ -1,12 +1,9 @@
-import React from 'react';
-import indeedHomepage from '../../Image/indeedHomepage.jpg'
-import manifoldHomepage from '../../Image/manifoldHomepage.jpg'
-import ttvHomepage from '../../Image/ttvHomepage.jpg'
+import React, { useState } from 'react';
+
 import './style.css';
-import { useState } from 'react';
 
 const ProjectCard = ({ data }) => {
-  const [modalType, setModalType] = useState(0)
+  const [modalType, setModalType] = useState(0);
   return (
 
     <div className="container">
@@ -17,7 +14,7 @@ const ProjectCard = ({ data }) => {
       <div className='header'>Project Case Study
         {data.map((project) => (
 
-          <div className='cardBody'>
+          <div className='cardBody' key={project.name}>
 
             <div className='cardInfo'>
               <div className='cardName'>{project.name}</div>
@@ -25,8 +22,7 @@ const ProjectCard = ({ data }) => {
             </div>
 
             <div className='cardLogo'>
-              <img src={manifoldHomepage} style={{ width: "400px", padding: "10%" }} alt='Company Homepage' className='cardImg' />
-              {/* <img src={project.image} style={{ width: "400px", padding: "10%" }} alt='Company Homepage' className='cardImg' /> */}
+            <img src={project.image} style={{ width: "400px", padding: "10%" }} alt='Company Homepage' className='cardImg' />
             </div>
           </div>
         ))}

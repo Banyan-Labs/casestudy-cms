@@ -1,6 +1,6 @@
 import React from 'react';
-import ProjectCard from './components/ProjectCard/projectCard'
-import { projectData } from './data/projectData'
+import ProjectCard from './components/ProjectCard/projectCard';
+import { projectData } from './data/projectData';
 import './App.css';
 
 function App() {
