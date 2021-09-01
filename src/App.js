@@ -1,6 +1,5 @@
 import React from 'react';
-// import { BrowserRouter } from "react-router-dom"
-import ProjectCard from './components/ProjectCard/index'
+import ProjectCard from './components/ProjectCard/projectCard'
 import { projectData } from './data/projectData'
 import './App.css';
 
