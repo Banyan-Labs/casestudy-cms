@@ -1,5 +1,4 @@
 import React from "react";
-import './style.js';
 import {ProjectContainer} from './style';
 import indeedHP from './Images/indeedHomepage.jpg';
 
