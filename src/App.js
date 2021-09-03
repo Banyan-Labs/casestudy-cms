@@ -1,17 +1,15 @@
 import React from 'react';
-import ProjectCard from './components/ProjectCard/projectCard';
-import { projectData } from './data/projectData';
-
-import './App.css';
-import EditDelete from './components/EditDelete/EditDelete';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      {/* <ProjectCard data={projectData} /> */}
-      <EditDelete />
-    </div>
+    <Router>
+      <div>
+        <Route path='/' exact component={HomePage} />
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
