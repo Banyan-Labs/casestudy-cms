@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 
 import './style.css';
@@ -20,7 +22,6 @@ const HomePage = ({ data }) => {
       >
         Sign In
       </button>
-
       <div className='header'>
         Project Case Study
         {data.map((project) => (
