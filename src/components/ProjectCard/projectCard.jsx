@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-
 import './style.css';
 
-const ProjectCard = ({ data }) => {
-  const [modalType, setModalType] = useState(0);
+const ProjectCard = ({ data, buttonsToRender }) => {
+  const [modalType, setModalType, createNew] = useState(0);
   return (
 
     <div className="container">
-
-      <button className="signUpBtn" onClick={() => setModalType(1)} style={{ backgroundColor: "#9fb5d5" }}>Sign Up</button>
-      <button className="signInBtn" onClick={() => setModalType(2)} style={{ backgroundColor: "#9fb5d5" }}>Sign In</button>
       
+      {buttonsToRender === "frontend" 
+      ? <div><button className="signUpBtn" onClick={() => setModalType(1)} style={{ backgroundColor: "#9fb5d5" }}>Sign Up</button>
+     <button className="signInBtn" onClick={() => setModalType(2)} style={{ backgroundColor: "#9fb5d5" }}>Sign In</button></div>
+     :<button className="createNew" onClick={createNew}>Create New Project</button>
+     }
+     
       <div className='header'>Project Case Study
         {data.map((project) => (
 
