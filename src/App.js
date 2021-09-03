@@ -6,10 +6,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <ProjectCard data={projectData} />
     </div>
   );
-};
+}
 
 export default App;
