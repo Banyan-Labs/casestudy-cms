@@ -58,3 +58,13 @@
 .cardImg {
   display: flex;
 }
+
+.createNew {
+  position: absolute;
+  right: 20%;
+  top: 5%;
+  width: 150px;
+  height: 40px;
+  font-size: 15px;
+  background-color: #9fb5d5;
+}

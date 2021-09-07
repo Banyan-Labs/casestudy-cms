@@ -1,27 +1,36 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-
+import PropTypes from 'prop-types';
 import './style.css';
 
-const HomePage = ({ data }) => {
-  const [modalType, setModalType] = useState(0);
+const HomePage = ({ data, buttonsToRender }) => {
+  const [modalType, setModalType, createNew] = useState(0);
   return (
     <div className='container'>
-      <button
-        className='signUpBtn'
-        onClick={() => setModalType(1)}
-        style={{ backgroundColor: '#9fb5d5' }}
-      >
-        Sign Up
-      </button>
-      <button
-        className='signInBtn'
-        onClick={() => setModalType(2)}
-        style={{ backgroundColor: '#9fb5d5' }}
-      >
-        Sign In
-      </button>
+      {buttonsToRender === 'frontend' ? (
+        <div>
+          <button
+            className='signUpBtn'
+            onClick={() => setModalType(1)}
+            style={{ backgroundColor: '#9fb5d5' }}
+          >
+            Sign Up
+          </button>
+          <button
+            className='signInBtn'
+            onClick={() => setModalType(2)}
+            style={{ backgroundColor: '#9fb5d5' }}
+          >
+            Sign In
+          </button>
+        </div>
+      ) : (
+        <button className='createNew' onClick={createNew}>
+          Create New Project
+        </button>
+      )}
+
       <div className='header'>
         Project Case Study
         {data.map((project) => (
@@ -44,6 +53,18 @@ const HomePage = ({ data }) => {
       </div>
     </div>
   );
+};
+
+HomePage.propTypes = {
+  data: PropTypes.array,
+};
+
+HomePage.propTypes = {
+  buttonsToRender: PropTypes.string,
+};
+
+HomePage.propTypes = {
+  modalType: PropTypes.string,
 };
 
 export default HomePage;
