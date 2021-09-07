@@ -1,133 +1,106 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 
-import { Container, Label, Input, Textarea, Button, } from './style';
+import { InputLabel } from './InputLabel';
+import { Container, Button } from './style';
 
 export default function InputForm() {
-    const [projectName, setProjectName] = useState('');
-    const [image, setImage] = useState('');
-    const [description, setDescription] = useState('');
-    const [findings, setFindings] = useState('');
-    const [discussion, setDiscussion] = useState('');
-    const [conclusion, setConclusion] = useState('');
-    const [recommendations, setRecommendations] = useState('');
-    const [implementation, setImplementation] = useState('');
-    const [references, setReferences] = useState('');
-    const [appendices, setAppendices] = useState('');
+  const [projectName, setProjectName] = useState('');
+  const [image, setImage] = useState('');
+  const [description, setDescription] = useState('');
+  const [findings, setFindings] = useState('');
+  const [discussion, setDiscussion] = useState('');
+  const [conclusion, setConclusion] = useState('');
+  const [recommendations, setRecommendations] = useState('');
+  const [implementation, setImplementation] = useState('');
+  const [references, setReferences] = useState('');
+  const [appendices, setAppendices] = useState('');
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event);
+  };
 
-    const handleSubmit = (errors, event) => {
-        event.preventDefault();
-        console.log(errors, event)
-    };
-
-    return (
-        <Container>
-            <h1>Create a New Project</h1>
-            <div>
-                <form onSubmit={handleSubmit}>
-
-                    <Label>
-                        <p className="input-text">Project Name:</p>
-                        <Input
-                            type="text"
-                            id="projectName"
-                            name="projectName"
-                            onChange={event => setProjectName(event.target.value)} required />
-                    </Label>
-
-                    <Label>
-                        <p className="input-text">Image:</p>
-                        <Input
-                            type="file"
-                            id="image"
-                            name="image"
-                            onChange={event => setImage(event.target.value)} />
-                    </Label>
-
-                    <Label>
-                        <p className="input-text">Synopsis/Executive Summary:</p>
-                        <Textarea
-                            type="text"
-                            id="description"
-                            name="description"
-                            onChange={event => setDescription(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Label>
-                        <p className="inputText">Findings:</p>
-                        <Textarea
-                            type="text"
-                            id="findings"
-                            name="findings"
-                            onChange={event => setFindings(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Label>
-                        <p className="inputText">Discussion:</p>
-                        <Textarea
-                            type="text"
-                            id="discussion"
-                            name="discussion"
-                            onChange={event => setDiscussion(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Label>
-                        <p className="inputText">Conclusion:</p>
-                        <Textarea
-                            type="text"
-                            id="conclusion"
-                            name="conclusion"
-                            onChange={event => setConclusion(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Label>
-                        <p className="inputText">Recommendations:</p>
-                        <Textarea
-                            type="text"
-                            id="recommendations"
-                            name="recommendations"
-                            onChange={event => setRecommendations(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Label>
-                        <p className="inputText">Implementation:</p>
-                        <Textarea
-                            type="text"
-                            id="implementation"
-                            name="implementation"
-                            onChange={event => setImplementation(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Label>
-                        <p className="inputText">References:</p>
-                        <Textarea
-                            type="text"
-                            id="references"
-                            name="references"
-                            onChange={event => setReferences(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Label>
-                        <p className="inputText">Appendices:</p>
-                        <Textarea
-                            type="text"
-                            id="appendices"
-                            name="appendices"
-                            onChange={event => setAppendices(event.target.value)}>
-                        </Textarea>
-                    </Label>
-
-                    <Button type="submit" value="Submit">Submit</Button>
-                </form>
-            </div>
-        </Container>
-    );
+  return (
+    <Container>
+      <h1>Create a New Project</h1>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <InputLabel
+            title={'Project Name'}
+            type={'projectName'}
+            idValue={'projectName'}
+            onChangeType={setProjectName}
+            inputType={'input'}
+          />
+          <InputLabel
+            title={'Image'}
+            type={'file'}
+            idValue={'image'}
+            onChangeType={setImage}
+            inputType={'input'}
+          />
+          <InputLabel
+            title={'Synopsis/Executive Summary'}
+            type={'description'}
+            idValue={'description'}
+            onChangeType={setDescription}
+            inputType={'text'}
+          />
+          <InputLabel
+            title={'Findings'}
+            type={'findings'}
+            idValue={'findings'}
+            onChangeType={setFindings}
+            inputType={'text'}
+          />
+          <InputLabel
+            title={'Discussion'}
+            type={'discussion'}
+            idValue={'discussion'}
+            onChangeType={setDiscussion}
+            inputType={'text'}
+          />
+          <InputLabel
+            title={'Conclusion'}
+            type={'conclusion'}
+            idValue={'conclusion'}
+            onChangeType={setConclusion}
+            inputType={'text'}
+          />
+          <InputLabel
+            title={'Recommendations'}
+            type={'recommendations'}
+            idValue={'recommendations'}
+            onChangeType={setRecommendations}
+            inputType={'text'}
+          />
+          <InputLabel
+            title={'Implementation'}
+            type={'implementation'}
+            idValue={'implementation'}
+            onChangeType={setImplementation}
+            inputType={'text'}
+          />
+          <InputLabel
+            title={'References'}
+            type={'references'}
+            idValue={'references'}
+            onChangeType={setReferences}
+            inputType={'text'}
+          />
+          <InputLabel
+            title={'Appendices'}
+            type={'appendices'}
+            idValue={'appendices'}
+            onChangeType={setAppendices}
+            inputType={'text'}
+          />
+          <Button type='submit' value='Submit'>
+            Submit
+          </Button>
+        </form>
+      </div>
+    </Container>
+  );
 }
