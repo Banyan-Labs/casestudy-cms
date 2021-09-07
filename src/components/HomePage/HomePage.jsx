@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 const HomePage = ({ data, buttonsToRender }) => {
-  const [modalType, setModalType, createNew] = useState(0);
+  const [modalType, setModalType] = useState(0);
   return (
     <div className='container'>
       {buttonsToRender === 'frontend' ? (
@@ -26,9 +26,7 @@ const HomePage = ({ data, buttonsToRender }) => {
           </button>
         </div>
       ) : (
-        <button className='createNew' onClick={createNew}>
-          Create New Project
-        </button>
+        <button className='createNew'>Create New Project</button>
       )}
 
       <div className='header'>
@@ -57,14 +55,7 @@ const HomePage = ({ data, buttonsToRender }) => {
 
 HomePage.propTypes = {
   data: PropTypes.array,
-};
-
-HomePage.propTypes = {
   buttonsToRender: PropTypes.string,
-};
-
-HomePage.propTypes = {
-  modalType: PropTypes.string,
 };
 
 export default HomePage;
