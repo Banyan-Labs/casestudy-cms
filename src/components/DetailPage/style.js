@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const ProjectContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: #e4e4e4;
   padding-bottom: 30px;
   h1 {
@@ -29,3 +30,7 @@ export const ProjectContainer = styled.div`
     float: right;
   }
 `;
+
+export const ProjectTitle = styled.div `
+
+`
