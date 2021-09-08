@@ -22,39 +22,6 @@ export const HomepageContainer = styled.div`
     background-color: #9fb5d5;
     font-size: 20px;
   }
-  .header {
-    font-size: 50px;
-    font-weight: 700;
-    padding-top: 10%;
-  }
-  .cardBody {
-    width: 50%;
-    height: 300px;
-    background-color: #9fb5d5;
-    display: flex;
-    flex-direction: row;
-    margin: 5% auto 0% auto;
-    border: 1px black solid;
-    padding: 0% 1% 0% 5%;
-  }
-  .cardInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 50%;
-  }
-  .cardName {
-    font-size: 40px;
-    font-weight: normal;
-  }
-  .cardDescription {
-    font-size: 20px;
-    font-weight: normal;
-  }
-  .cardImg {
-    display: flex;
-  }
   .createNew {
     position: absolute;
     right: 20%;
@@ -64,8 +31,42 @@ export const HomepageContainer = styled.div`
     font-size: 15px;
     background-color: #9fb5d5;
   }
-  .cardLogo {
-    width: 400px;
-    padding: 10%;
-  }
+`;
+
+export const Header = styled.div`
+  font-size: 50px;
+  font-weight: 700;
+  padding-top: 10%;
+`;
+export const CardBody = styled.div`
+  width: 50%;
+  height: 300px;
+  background-color: #9fb5d5;
+  display: flex;
+  flex-direction: row;
+  margin: 5% auto 0% auto;
+  border: 1px black solid;
+  padding: 0% 1% 0% 5%;
+`;
+export const CardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+`;
+export const CardName = styled.div`
+  font-size: 40px;
+  font-weight: normal;
+`;
+export const CardDescription = styled.div`
+  font-size: 20px;
+  font-weight: normal;
+`;
+export const CardLogo = styled.div`
+  width: 400px;
+  padding: 10%;
+`;
+export const CardImage = styled.div`
+  display: flex;
 `;

@@ -2,7 +2,16 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { HomepageContainer } from './style';
+import {
+  HomepageContainer,
+  Header,
+  CardBody,
+  CardInfo,
+  CardName,
+  CardDescription,
+  CardLogo,
+  CardImage,
+} from './style';
 
 const HomePage = ({ data, buttonsToRender }) => {
   const [modalType, setModalType] = useState(0);
@@ -21,23 +30,21 @@ const HomePage = ({ data, buttonsToRender }) => {
         <button className='createNew'>Create New Project</button>
       )}
 
-      <div className='header'>
-        Project Case Study
+      <div>
+        <Header>Project Case Study</Header>
         {data.map((project) => (
-          <div className='cardBody' key={project.name}>
-            <div className='cardInfo'>
-              <div className='cardName'>{project.name}</div>
-              <div className='cardDescription'>{project.description}</div>
-            </div>
+          <CardBody key={project.name}>
+            <CardInfo>
+              <CardName>{project.name}</CardName>
+              <CardDescription>{project.description}</CardDescription>
+            </CardInfo>
 
-            <div className='cardLogo'>
-              <img
-                src={project.image}
-                alt='Company Homepage'
-                className='cardImg'
-              />
-            </div>
-          </div>
+            <CardLogo>
+              <CardImage>
+                <img src={project.image} alt='Company Homepage' />
+              </CardImage>
+            </CardLogo>
+          </CardBody>
         ))}
       </div>
     </HomepageContainer>
