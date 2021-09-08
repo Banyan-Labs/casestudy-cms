@@ -83,14 +83,14 @@ const DetailPage = () => {
           </p>
         </div>
 
-        <Link href='#' id='edit'>
+        <Link to='#' id='edit'>
           Edit
         </Link>
-        <Link href='#' id='delete'>
+        <Link to='#' id='delete'>
           Delete
         </Link>
         <br />
-        <Link href='#' id='home'>
+        <Link to='#' id='home'>
           Home
         </Link>
       </div>
