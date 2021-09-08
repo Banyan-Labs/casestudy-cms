@@ -6,7 +6,7 @@ export const AccountModal = ({ modalType }) => {
   return (
     <ModalContainer>
       <Content>
-        {modalType === 0 ?
+        {modalType === 0 ? (
           <div>
             <h1>Sign Up For An Account</h1>
             <label>Email</label>
@@ -21,10 +21,12 @@ export const AccountModal = ({ modalType }) => {
             <br />
             <input id='submit' type='submit' value='Sign Up' />
             <br></br>
-            <a href="" onClick={() => this.closeModal()}>close</a>
+            <a href='' className='closeBtn' onClick={() => this.closeModal()}>
+              close
+            </a>
           </div>
-          :
-          <div >
+        ) : (
+          <div>
             <h1>Sign In To Your Account</h1>
             <label>Username</label>
             <input type='text' id='username' name='username' required />
@@ -35,9 +37,11 @@ export const AccountModal = ({ modalType }) => {
             <br />
             <input id='submit' type='submit' value='Sign In' />
             <br></br>
-            <a href="" onClick={() => this.closeModal()}>close</a>
+            <a href='' onClick={() => this.closeModal()}>
+              close
+            </a>
           </div>
-        }
+        )}
       </Content>
     </ModalContainer>
   );

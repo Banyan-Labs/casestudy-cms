@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import AccountModal from '../AccountModal/AccountModal'
+import AccountModal from '../AccountModal/AccountModal';
 import './style.css';
 
 const HomePage = ({ data }) => {
@@ -10,7 +10,7 @@ const HomePage = ({ data }) => {
   const openModal = (type) => {
     setModalType(type);
     setModalOpen(true);
-  }
+  };
   return (
     <div className='container'>
       <button
@@ -27,9 +27,9 @@ const HomePage = ({ data }) => {
       >
         Sign In
       </button>
-      {
-        modalOpen && <AccountModal modalType={modalType} setModalType={setModalType} />
-      }
+      {modalOpen && (
+        <AccountModal modalType={modalType} setModalType={setModalType} />
+      )}
       <div className='header'>
         Project Case Study
         {data.map((project) => (
