@@ -2,11 +2,11 @@ import React from 'react';
 import { ModalContainer, Content } from './style';
 import PropTypes from 'prop-types';
 
-const AccountModal = ({ modalType }) => {
+export const AccountModal = ({ modalType }) => {
   return (
     <ModalContainer>
       <Content>
-        {modalType === 1 ? (
+        {modalType === 0 ?
           <div>
             <h1>Sign Up For An Account</h1>
             <label>Email</label>
@@ -20,9 +20,11 @@ const AccountModal = ({ modalType }) => {
             <br />
             <br />
             <input id='submit' type='submit' value='Sign Up' />
+            <br></br>
+            <a href="" onClick={() => this.closeModal()}>close</a>
           </div>
-        ) : (
-          <div>
+          :
+          <div >
             <h1>Sign In To Your Account</h1>
             <label>Username</label>
             <input type='text' id='username' name='username' required />
@@ -32,8 +34,10 @@ const AccountModal = ({ modalType }) => {
             <br />
             <br />
             <input id='submit' type='submit' value='Sign In' />
+            <br></br>
+            <a href="" onClick={() => this.closeModal()}>close</a>
           </div>
-        )}
+        }
       </Content>
     </ModalContainer>
   );
@@ -41,6 +45,7 @@ const AccountModal = ({ modalType }) => {
 
 AccountModal.propTypes = {
   modalType: PropTypes.string,
+  setModalType: PropTypes.string,
 };
 
 export default AccountModal;
