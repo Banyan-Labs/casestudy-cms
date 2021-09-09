@@ -4,7 +4,8 @@ import indeedHomePage from '../../images/indeedHomepage.jpg';
 import { useParams } from 'react-router';
 
 const DetailPage = () => {
-  let projectId = useParams();
+  let { projectId } = useParams();
+  console.log(projectId);
   return (
     <ProjectContainer>
       <div>

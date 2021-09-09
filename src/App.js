@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <div>
-        <Route path='/'>
-          <HomePage data={projectData} />
+        <Route path='/' exact>
+          <HomePage data={projectData} buttonsToRender='frontend' />
         </Route>
         <Route path='/:projectId' exact component={DetailPage} />
       </div>
