@@ -1,9 +1,11 @@
 import React from 'react';
 import { ProjectContainer } from './style';
 import indeedHomePage from '../../images/indeedHomepage.jpg';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 const DetailPage = () => {
+  let { projectId } = useParams();
+  console.log(projectId);
   return (
     <ProjectContainer>
       <div>
