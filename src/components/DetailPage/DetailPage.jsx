@@ -1,8 +1,11 @@
 import React from 'react';
 import { ProjectContainer } from './style';
 import indeedHomePage from '../../images/indeedHomepage.jpg';
+import { useParams } from 'react-router';
 
 const DetailPage = () => {
+  let { projectId } = useParams();
+  console.log(projectId);
   return (
     <ProjectContainer>
       <div>
@@ -82,16 +85,16 @@ const DetailPage = () => {
           </p>
         </div>
 
-        <a href='#' id='edit'>
+        <Link to='#' id='edit'>
           Edit
-        </a>
-        <a href='#' id='delete'>
+        </Link>
+        <Link to='#' id='delete'>
           Delete
-        </a>
+        </Link>
         <br />
-        <a href='#' id='home'>
+        <Link to='#' id='home'>
           Home
-        </a>
+        </Link>
       </div>
     </ProjectContainer>
   );

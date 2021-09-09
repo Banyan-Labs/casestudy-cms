@@ -3,8 +3,16 @@
 import React, { useState } from 'react';
 import AccountModal from '../AccountModal/AccountModal';
 import PropTypes from 'prop-types';
-
-import './style.css';
+import {
+  HomepageContainer,
+  Header,
+  CardBody,
+  CardInfo,
+  CardName,
+  CardDescription,
+  CardLogo,
+  CardImage,
+} from './style';
 
 const HomePage = ({ data, buttonsToRender }) => {
   const [modalType, setModalType] = useState(0);
@@ -14,64 +22,41 @@ const HomePage = ({ data, buttonsToRender }) => {
     setModalOpen(true);
   };
   return (
-    <div className='container'>
-      <button
-        className='signUpBtn'
-        onClick={() => openModal(0)}
-        style={{ backgroundColor: '#9fb5d5' }}
-      >
-        Sign Up
-      </button>
-      <button
-        className='signInBtn'
-        onClick={() => openModal(1)}
-        style={{ backgroundColor: '#9fb5d5' }}
-      >
-        Sign In
-      </button>
-      {modalOpen && (
-        <AccountModal modalType={modalType} setModalType={setModalType} />
-      )}
+    <HomepageContainer>
       {buttonsToRender === 'frontend' ? (
         <div>
-          <button
-            className='signUpBtn'
-            onClick={() => setModalType(1)}
-            style={{ backgroundColor: '#9fb5d5' }}
-          >
+          <button className='signUpBtn' onClick={() => openModal(0)}>
             Sign Up
           </button>
-          <button
-            className='signInBtn'
-            onClick={() => setModalType(2)}
-            style={{ backgroundColor: '#9fb5d5' }}
-          >
+          <button className='signInBtn' onClick={() => openModal(1)}>
             Sign In
           </button>
+          {modalOpen && (
+            <AccountModal modalType={modalType} setModalType={setModalType} />
+          )}
         </div>
       ) : (
         <button className='createNew'>Create New Project</button>
       )}
-      <div className='header'>
-        Project Case Study
+
+      <div>
+        <Header>Project Case Study</Header>
         {data.map((project) => (
-          <div className='cardBody' key={project.name}>
-            <div className='cardInfo'>
-              <div className='cardName'>{project.name}</div>
-              <div className='cardDescription'>{project.description}</div>
-            </div>
-            <div className='cardLogo'>
-              <img
-                src={project.image}
-                style={{ width: '400px', padding: '10%' }}
-                alt='Company Homepage'
-                className='cardImg'
-              />
-            </div>
-          </div>
+          <CardBody key={project.name}>
+            <CardInfo>
+              <CardName>{project.name}</CardName>
+              <CardDescription>{project.description}</CardDescription>
+            </CardInfo>
+
+            <CardLogo>
+              <CardImage>
+                <img src={project.image} alt='Company Homepage' />
+              </CardImage>
+            </CardLogo>
+          </CardBody>
         ))}
       </div>
-    </div>
+    </HomepageContainer>
   );
 };
 
