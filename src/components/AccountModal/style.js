@@ -13,21 +13,32 @@ export const Content = styled.div`
   display: flex;
   z-index: 1;
   text-align: center;
-  h1 {
-    color: black;
-    padding-left: 20px;
-  }
-  #email {
-    margin-left: 18%;
-  }
-  #username {
-    margin-left: 8.5%;
-  }
-  #password {
-    margin-left: 10%;
-  }
-  #submit {
-    margin-left: 30%;
-    background-color: #9fb5d5;
-  }
+  justify-content: center;
+`;
+
+export const Header = styled.div`
+  color: black;
+  margin-top: 30%;
+  text-align: center;
+`;
+
+export const Input = styled.input.attrs((props) => ({
+  type: 'text',
+  size: props.size || '1em',
+}))``;
+
+export const PasswordInput = styled(Input).attrs({
+  type: 'password',
+})``;
+
+export const EmailInput = styled(Input).attrs({
+  type: 'email',
+})``;
+
+export const SubmitInput = styled(Input).attrs({
+  type: 'submit',
+})`
+  background-color: #9fb5d5;
+  height: 25px;
+  width: 70px;
 `;

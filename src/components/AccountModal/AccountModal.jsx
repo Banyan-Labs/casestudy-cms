@@ -1,5 +1,13 @@
 import React from 'react';
-import { ModalContainer, Content } from './style';
+import {
+  ModalContainer,
+  Content,
+  Header,
+  Input,
+  PasswordInput,
+  EmailInput,
+  SubmitInput,
+} from './style';
 import PropTypes from 'prop-types';
 
 const AccountModal = ({ modalType }) => {
@@ -8,30 +16,25 @@ const AccountModal = ({ modalType }) => {
       <Content>
         {modalType === 1 ? (
           <div>
-            <h1>Sign Up For An Account</h1>
-            <label>Email</label>
-            <input type='text' id='email' name='email' required />
+            <Header>Sign Up For An Account</Header>
+            <EmailInput placeholder='Email' required />
             <br />
-            <label>Username</label>
-            <input type='text' id='username' name='username' required />
+            <Input placeholder='Username' required />
             <br />
-            <label>Password</label>
-            <input type='password' id='password' name='password' required />
+            <PasswordInput placeholder='Password' required />
             <br />
             <br />
-            <input id='submit' type='submit' value='Sign Up' />
+            <SubmitInput value='Sign Up' />
           </div>
         ) : (
           <div>
-            <h1>Sign In To Your Account</h1>
-            <label>Username</label>
-            <input type='text' id='username' name='username' required />
+            <Header>Sign In To Your Account</Header>
+            <Input placeholder='Username' required />
             <br />
-            <label>Password</label>
-            <input type='password' id='password' name='password' required />
+            <PasswordInput placeholder='Password' required />
             <br />
             <br />
-            <input id='submit' type='submit' value='Sign In' />
+            <SubmitInput value='Sign In' />
           </div>
         )}
       </Content>
