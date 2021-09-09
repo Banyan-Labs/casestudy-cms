@@ -4,6 +4,7 @@ import ttvHomepage from '../images/ttvHomepage.jpg';
 
 export const projectData = [
   {
+    id: 1,
     name: 'Indeed',
     image: indeedHomepage,
     description:
@@ -17,6 +18,7 @@ export const projectData = [
     appendices: 'Lorem ipsum dolor sit amet consectetur adipisicing elitconsectetur adipisicing',
   },
   {
+    id: 2,
     name: 'Manifold',
     image: manifoldHomepage,
     description:
@@ -30,6 +32,7 @@ export const projectData = [
     appendices: 'Lorem ipsum dolor sit amet consectetur adipisicing elitconsectetur adipisicing',
   },
   {
+    id: 3,
     name: 'ttv capital',
     image: ttvHomepage,
     description:
