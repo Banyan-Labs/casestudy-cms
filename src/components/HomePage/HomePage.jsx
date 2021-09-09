@@ -2,27 +2,27 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
-import './style.css';
+import {
+  HomepageContainer,
+  Header,
+  CardBody,
+  CardInfo,
+  CardName,
+  CardDescription,
+  CardLogo,
+  CardImage,
+} from './style';
 
 const HomePage = ({ data, buttonsToRender }) => {
   const [modalType, setModalType] = useState(0);
   return (
-    <div className='container'>
+    <HomepageContainer>
       {buttonsToRender === 'frontend' ? (
         <div>
-          <button
-            className='signUpBtn'
-            onClick={() => setModalType(1)}
-            style={{ backgroundColor: '#9fb5d5' }}
-          >
+          <button className='signUpBtn' onClick={() => setModalType(1)}>
             Sign Up
           </button>
-          <button
-            className='signInBtn'
-            onClick={() => setModalType(2)}
-            style={{ backgroundColor: '#9fb5d5' }}
-          >
+          <button className='signInBtn' onClick={() => setModalType(2)}>
             Sign In
           </button>
         </div>
@@ -30,27 +30,24 @@ const HomePage = ({ data, buttonsToRender }) => {
         <button className='createNew'>Create New Project</button>
       )}
 
-      <div className='header'>
-        Project Case Study
+      <div>
+        <Header>Project Case Study</Header>
         {data.map((project) => (
-          <div className='cardBody' key={project.name}>
-            <div className='cardInfo'>
-              <div className='cardName'>{project.name}</div>
-              <div className='cardDescription'>{project.description}</div>
-            </div>
+          <CardBody key={project.name}>
+            <CardInfo>
+              <CardName>{project.name}</CardName>
+              <CardDescription>{project.description}</CardDescription>
+            </CardInfo>
 
-            <div className='cardLogo'>
-              <img
-                src={project.image}
-                style={{ width: '400px', padding: '10%' }}
-                alt='Company Homepage'
-                className='cardImg'
-              />
-            </div>
-          </div>
+            <CardLogo>
+              <CardImage>
+                <img src={project.image} alt='Company Homepage' />
+              </CardImage>
+            </CardLogo>
+          </CardBody>
         ))}
       </div>
-    </div>
+    </HomepageContainer>
   );
 };
 

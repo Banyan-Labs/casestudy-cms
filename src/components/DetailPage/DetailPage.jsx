@@ -1,4 +1,6 @@
 import React from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { ProjectContainer, Label, Name, Description, Findings, Discussion, Conclusion, Recommendations, Implementation, References, Appendices } from './style';
@@ -7,7 +9,8 @@ import { ProjectContainer, Label, Name, Description, Findings, Discussion, Concl
 // import indeedHomePage from '../../images/indeedHomepage.jpg';
 
 const DetailPage = ({ data }) => {
-
+  let { projectId } = useParams();
+  console.log(projectId);
   return (
     <ProjectContainer>
 
@@ -37,41 +40,22 @@ const DetailPage = ({ data }) => {
       <Label>Appendices: </Label>
       <Appendices>{data[0].appendices}</Appendices>
 
-
+      <Link to='#' id='edit'>
+        Edit
+      </Link>
+      <Link to='#' id='delete'>
+        Delete
+      </Link>
+      <br />
+      <Link to='/' id='home'>
+        Home
+      </Link>
     </ProjectContainer>
-  );
-};
+  )
+}
 
 DetailPage.propTypes = {
   data: PropTypes.array,
 };
 
 export default DetailPage;
-
-
-
-
-
-
-// import React from 'react';
-// import { ProjectContainer } from './style';
-// import indeedHomePage from '../../images/indeedHomepage.jpg';
-
-
-
-//         <a href='#' id='edit'>
-//           Edit
-//         </a>
-//         <a href='#' id='delete'>
-//           Delete
-//         </a>
-//         <br />
-//         <a href='#' id='home'>
-//           Home
-//         </a>
-//       </div>
-//     </ProjectContainer>
-//   );
-// };
-
-// export default DetailPage;
