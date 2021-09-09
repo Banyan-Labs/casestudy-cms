@@ -6,31 +6,108 @@ export const ProjectContainer = styled.div`
   align-items: center;
   background-color: #e4e4e4;
   padding-bottom: 30px;
-  h1 {
+`;
+
+export const Label = styled.div `
+  text-align: left;
+  font-size: 20px;
+`
+
+export const Name = styled.div `
     text-decoration: underline;
-  }
-  img {
+    font-size: 25px;
+`
+
+export const Image = styled.div `
     border: solid black;
-  }
-  h3 {
-    text-align: left;
-  }
-  p {
+`
+export const Description = styled.div `
     border: solid black;
     background: white;
     width: 800px;
     height: 100px;
     padding-right: 10px;
     padding-left: 10px;
-  }
-  #edit {
-    float: left;
-  }
-  #delete {
-    float: right;
-  }
-`;
-
-export const ProjectTitle = styled.div `
-
 `
+export const Findings = styled.div `
+    border: solid black;
+    background: white;
+    width: 800px;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+export const Discussion = styled.div `
+    border: solid black;
+    background: white;
+    width: 800px;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+
+export const Conclusion = styled.div `
+    border: solid black;
+    background: white;
+    width: 800px;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+
+export const Recommendations = styled.div `
+    border: solid black;
+    background: white;
+    width: 800px;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+
+export const Implementation = styled.div `
+    border: solid black;
+    background: white;
+    width: 800px;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+export const References = styled.div `
+    border: solid black;
+    background: white;
+    width: 800px;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+
+export const Appendices = styled.div `
+    border: solid black;
+    background: white;
+    width: 800px;
+    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+
+
+
+
+
+
+
+
+
+
+// #edit {
+//   float: left;
+// }
+// #delete {
+//   float: right;
+// }
+
+
+
+
+
+

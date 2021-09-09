@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
 import './style.css';
 
 const HomePage = ({ data, buttonsToRender }) => {
