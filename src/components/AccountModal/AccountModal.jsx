@@ -7,6 +7,7 @@ import {
   PasswordInput,
   EmailInput,
   SubmitInput,
+  InputContainer,
 } from './style';
 import PropTypes from 'prop-types';
 
@@ -15,27 +16,20 @@ const AccountModal = ({ modalType }) => {
     <ModalContainer>
       <Content>
         {modalType === 1 ? (
-          <div>
+          <InputContainer>
             <Header>Sign Up For An Account</Header>
             <EmailInput placeholder='Email' required />
-            <br />
             <Input placeholder='Username' required />
-            <br />
             <PasswordInput placeholder='Password' required />
-            <br />
-            <br />
             <SubmitInput value='Sign Up' />
-          </div>
+          </InputContainer>
         ) : (
-          <div>
+          <InputContainer>
             <Header>Sign In To Your Account</Header>
             <Input placeholder='Username' required />
-            <br />
             <PasswordInput placeholder='Password' required />
-            <br />
-            <br />
             <SubmitInput value='Sign In' />
-          </div>
+          </InputContainer>
         )}
       </Content>
     </ModalContainer>
