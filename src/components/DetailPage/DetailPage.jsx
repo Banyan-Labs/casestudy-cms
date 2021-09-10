@@ -1,103 +1,74 @@
 import React from 'react';
-import { ProjectContainer } from './style';
-import indeedHomePage from '../../images/indeedHomepage.jpg';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const DetailPage = () => {
+import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
+
+const DetailPage = ({ data }) => {
+  console.log(data);
   let { projectId } = useParams();
   console.log(projectId);
   return (
-    <ProjectContainer>
-      <div>
-        <h1>Project Title</h1>
-        <img src={indeedHomePage} />
-        <div>
-          <h3>Synopsis:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quo
-            at, accusantium sint asperiores maxime eos exercitationem ullam
-            quasi similique ea facere nostrum molestiae doloribus consectetur
-            est autem. Rem, impedit!
-          </p>
-        </div>
-        <div>
-          <h3>Findings:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quo
-            at, accusantium sint asperiores maxime eos exercitationem ullam
-            quasi similique ea facere nostrum molestiae doloribus consectetur
-            est autem. Rem, impedit!
-          </p>
-        </div>
-        <div>
-          <h3>Discussion:</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam
-            velit totam earum, laudantium ad distinctio nulla numquam vero
-            corrupti ipsa. Totam, facere ipsum! Magni, corrupti dolores? Debitis
-            reiciendis similique mollitia at itaque qui autem fugit assumenda,
-            facilis quasi suscipit explicabo aliquam ratione placeat dolorem id
-            error repudiandae omnis. Veniam, cum!
-          </p>
-        </div>
-        <div>
-          <h3>Conclusion:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quo
-            at, accusantium sint asperiores maxime eos exercitationem ullam
-            quasi similique ea facere nostrum molestiae doloribus consectetur
-            est autem. Rem, impedit!
-          </p>
-        </div>
-        <div>
-          <h3>Recommendations:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quo
-            at, accusantium sint asperiores maxime eos exercitationem ullam
-            quasi similique ea facere nostrum molestiae doloribus consectetur
-            est autem. Rem, impedit!
-          </p>
-        </div>
-        <div>
-          <h3>Implementation:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quo
-            at, accusantium sint asperiores maxime eos exercitationem ullam
-            quasi similique ea facere nostrum molestiae doloribus consectetur
-            est autem. Rem, impedit!
-          </p>
-        </div>
-        <div>
-          <h3>References:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quo
-            at, accusantium sint asperiores maxime eos exercitationem ullam
-            quasi similique ea facere nostrum molestiae doloribus consectetur
-            est autem. Rem, impedit!
-          </p>
-        </div>
-        <div>
-          <h3>Appendices:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            veniam nam alias ullam molestias in eius quibusdam voluptatibus a
-            vel?
-          </p>
-        </div>
+    <div>
+      {data
+        .filter((project) => project.id === projectId)
+        .map((project, index) => {
+          console.log(project);
+          return (
+            <div key={index}>
+              <ProjectContainer>
+                <Name>{project.name}</Name>
 
-        <Link to='#' id='edit'>
-          Edit
-        </Link>
-        <Link to='#' id='delete'>
-          Delete
-        </Link>
-        <br />
-        <Link to='#' id='home'>
-          Home
-        </Link>
-      </div>
-    </ProjectContainer>
+                <Image src={project.image} alt='Company Homepage'></Image>
+
+                <Label>Description: </Label>
+                <Text>{project.description}</Text>
+
+                <Label>Findings: </Label>
+                <Text>{project.findings}</Text>
+
+                <Label>Discussion: </Label>
+                <Text>{project.discussion}</Text>
+
+                <Label>Conclusion: </Label>
+                <Text>{project.conclusion}</Text>
+
+                <Label>Recommendations: </Label>
+                <Text>{project.recommendations}</Text>
+
+                <Label>Description: </Label>
+                <Text>{project.implementation}</Text>
+
+                <Label>References: </Label>
+                <Text>{project.references}</Text>
+
+                <Label>Appendices: </Label>
+                <Text>{project.appendices}</Text>
+
+                <Links>
+                  <Link to='#' id='edit'>
+                    Edit
+                  </Link>
+
+                  <Link to='#' id='delete'>
+                    Delete
+                  </Link>
+
+                  <Link to='/' id='home'>
+                    Home
+                  </Link>
+                </Links>
+              </ProjectContainer>
+            </div>
+          );
+        })}
+    </div>
   );
+};
+
+DetailPage.propTypes = {
+  data: PropTypes.array,
 };
 
 export default DetailPage;

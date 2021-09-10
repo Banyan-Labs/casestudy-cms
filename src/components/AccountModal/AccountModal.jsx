@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalContainer, Content, Header } from './style';
+import { ModalContainer, Content, Header, InputContainer } from './style';
 import PropTypes from 'prop-types';
 
 const AccountModal = ({ modalType }) => {
@@ -7,7 +7,7 @@ const AccountModal = ({ modalType }) => {
     <ModalContainer>
       <Content>
         {modalType === 0 ? (
-          <div>
+          <InputContainer>
             <Header>Sign Up For An Account</Header>
             <input type='text' placeholder='Email' required />
             <input type='text' placeholder='Username' required />
@@ -16,9 +16,9 @@ const AccountModal = ({ modalType }) => {
             <a href='' className='closeBtn' onClick={() => this.closeModal()}>
               close
             </a>
-          </div>
+          </InputContainer>
         ) : (
-          <div>
+          <InputContainer>
             <Header>Sign In To Your Account</Header>
             <input type='text' placeholder='Username' required />
             <input type='password' required />
@@ -26,7 +26,7 @@ const AccountModal = ({ modalType }) => {
             <a href='' onClick={() => this.closeModal()}>
               close
             </a>
-          </div>
+          </InputContainer>
         )}
       </Content>
     </ModalContainer>

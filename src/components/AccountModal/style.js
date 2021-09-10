@@ -18,8 +18,15 @@ export const Content = styled.div`
   justify-content: center;
 `;
 
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
 export const Header = styled.div`
-  color: black;
-  margin-top: 30%;
   text-align: center;
+  font-weight: bold;
+  font-size: 25px;
 `;

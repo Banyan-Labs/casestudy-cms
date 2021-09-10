@@ -11,10 +11,12 @@ function App() {
         <Route path='/' exact>
           <HomePage data={projectData} buttonsToRender='frontend' />
         </Route>
-        <Route path='/:projectId' exact component={DetailPage} />
-      </div>
-    </Router>
-  );
+        <Route path='/:projectId' exact>
+          <DetailPage data={projectData} />
+          </Route>
+          </div>
+        </Router>
+        );
 }
 
-export default App;
+        export default App;
