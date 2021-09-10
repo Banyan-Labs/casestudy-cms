@@ -1,58 +1,71 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { ProjectContainer, Label, Name, Description, Findings, Discussion, Conclusion, Recommendations, Implementation, References, Appendices } from './style';
-// import { projectData } from '../../data/projectData';
-
-// import indeedHomePage from '../../images/indeedHomepage.jpg';
+import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
 
 const DetailPage = ({ data }) => {
+  console.log(data);
   let { projectId } = useParams();
   console.log(projectId);
   return (
-    <ProjectContainer>
+    <div>
+      {data
+        .filter((project) => project.id === projectId)
+        .map((project, index) => {
+          console.log(project);
+          return (
+            <div key={index}>
+              <ProjectContainer>
+                <Name>{project.name}</Name>
 
-      <Name>{data[0].name}</Name>
+                <Image src={project.image} alt='Company Homepage'></Image>
 
-      <Label>Description: </Label>
-      <Description>{data[0].description}</Description>
+                <Label>Description: </Label>
+                <Text>{project.description}</Text>
 
-      <Label>Findings: </Label>
-      <Findings>{data[0].findings}</Findings>
+                <Label>Findings: </Label>
+                <Text>{project.findings}</Text>
 
-      <Label>Discussion: </Label>
-      <Discussion>{data[0].discussion}</Discussion>
+                <Label>Discussion: </Label>
+                <Text>{project.discussion}</Text>
 
-      <Label>Conclusion: </Label>
-      <Conclusion>{data[0].conclusion}</Conclusion>
+                <Label>Conclusion: </Label>
+                <Text>{project.conclusion}</Text>
 
-      <Label>Recommendations: </Label>
-      <Recommendations>{data[0].recommendations}</Recommendations>
+                <Label>Recommendations: </Label>
+                <Text>{project.recommendations}</Text>
 
-      <Label>Descriptimplementationion: </Label>
-      <Implementation>{data[0].implementation}</Implementation>
+                <Label>Description: </Label>
+                <Text>{project.implementation}</Text>
 
-      <Label>References: </Label>
-      <References>{data[0].references}</References>
+                <Label>References: </Label>
+                <Text>{project.references}</Text>
 
-      <Label>Appendices: </Label>
-      <Appendices>{data[0].appendices}</Appendices>
+                <Label>Appendices: </Label>
+                <Text>{project.appendices}</Text>
 
-      <Link to='#' id='edit'>
-        Edit
-      </Link>
-      <Link to='#' id='delete'>
-        Delete
-      </Link>
-      <br />
-      <Link to='/' id='home'>
-        Home
-      </Link>
-    </ProjectContainer>
-  )
-}
+                <Links>
+                  <Link to='#' id='edit'>
+                    Edit
+                  </Link>
+
+                  <Link to='#' id='delete'>
+                    Delete
+                  </Link>
+
+                  <Link to='/' id='home'>
+                    Home
+                  </Link>
+                </Links>
+              </ProjectContainer>
+            </div>
+          );
+        })}
+    </div>
+  );
+};
 
 DetailPage.propTypes = {
   data: PropTypes.array,
