@@ -13,10 +13,10 @@ function App() {
         </Route>
         <Route path='/:projectId' exact>
           <DetailPage data={projectData} />
-          </Route>
-          </div>
-        </Router>
-        );
+        </Route>
+      </div>
+    </Router>
+  );
 }
 
-        export default App;
+export default App;

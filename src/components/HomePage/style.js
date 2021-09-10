@@ -4,6 +4,7 @@ export const HomepageContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: #e4e4e4;
+  padding-bottom: 3%;
   .signUpBtn {
     position: absolute;
     right: 20%;
@@ -34,6 +35,8 @@ export const HomepageContainer = styled.div`
 `;
 
 export const Header = styled.div`
+  display: flex;
+  justify-content: center;
   font-size: 50px;
   font-weight: 700;
   padding-top: 10%;

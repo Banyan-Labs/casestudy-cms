@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import AccountModal from '../AccountModal/AccountModal';
 import PropTypes from 'prop-types';
 import {
   HomepageContainer,
@@ -15,16 +16,24 @@ import {
 
 const HomePage = ({ data, buttonsToRender }) => {
   const [modalType, setModalType] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = (type) => {
+    setModalType(type);
+    setModalOpen(true);
+  };
   return (
     <HomepageContainer>
       {buttonsToRender === 'frontend' ? (
         <div>
-          <button className='signUpBtn' onClick={() => setModalType(1)}>
+          <button className='signUpBtn' onClick={() => openModal(0)}>
             Sign Up
           </button>
-          <button className='signInBtn' onClick={() => setModalType(2)}>
+          <button className='signInBtn' onClick={() => openModal(1)}>
             Sign In
           </button>
+          {modalOpen && (
+            <AccountModal modalType={modalType} setModalType={setModalType} />
+          )}
         </div>
       ) : (
         <button className='createNew'>Create New Project</button>

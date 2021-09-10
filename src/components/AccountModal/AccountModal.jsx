@@ -1,34 +1,31 @@
 import React from 'react';
-import {
-  ModalContainer,
-  Content,
-  Header,
-  Input,
-  PasswordInput,
-  EmailInput,
-  SubmitInput,
-  InputContainer,
-} from './style';
+import { ModalContainer, Content, Header, InputContainer } from './style';
 import PropTypes from 'prop-types';
 
 const AccountModal = ({ modalType }) => {
   return (
     <ModalContainer>
       <Content>
-        {modalType === 1 ? (
+        {modalType === 0 ? (
           <InputContainer>
             <Header>Sign Up For An Account</Header>
-            <EmailInput placeholder='Email' required />
-            <Input placeholder='Username' required />
-            <PasswordInput placeholder='Password' required />
-            <SubmitInput value='Sign Up' />
+            <input type='text' placeholder='Email' required />
+            <input type='text' placeholder='Username' required />
+            <input type='password' placeholder='Password' required />
+            <input type='submit' value='Sign Up' />
+            <a href='' className='closeBtn' onClick={() => this.closeModal()}>
+              close
+            </a>
           </InputContainer>
         ) : (
           <InputContainer>
             <Header>Sign In To Your Account</Header>
-            <Input placeholder='Username' required />
-            <PasswordInput placeholder='Password' required />
-            <SubmitInput value='Sign In' />
+            <input type='text' placeholder='Username' required />
+            <input type='password' required />
+            <input type='submit' value='Sign In' />
+            <a href='' onClick={() => this.closeModal()}>
+              close
+            </a>
           </InputContainer>
         )}
       </Content>
