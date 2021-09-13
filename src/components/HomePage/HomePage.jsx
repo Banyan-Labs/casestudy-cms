@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import AccountModal from '../AccountModal/AccountModal';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
   HomepageContainer,
   Header,
@@ -12,6 +11,7 @@ import {
   CardDescription,
   CardLogo,
   CardImage,
+  CreateNewButton,
 } from './style';
 
 const HomePage = ({ data, buttonsToRender }) => {
@@ -36,7 +36,11 @@ const HomePage = ({ data, buttonsToRender }) => {
           )}
         </div>
       ) : (
-        <button className='createNew'>Create New Project</button>
+        <CreateNewButton>
+          <Link to={'/input-page'} id={'link'}>
+            Create New Project
+          </Link>
+        </CreateNewButton>
       )}
 
       <div>

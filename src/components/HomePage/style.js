@@ -23,14 +23,19 @@ export const HomepageContainer = styled.div`
     background-color: #9fb5d5;
     font-size: 20px;
   }
-  .createNew {
-    position: absolute;
-    right: 20%;
-    top: 5%;
-    width: 150px;
-    height: 40px;
-    font-size: 15px;
-    background-color: #9fb5d5;
+`;
+
+export const CreateNewButton = styled.button`
+  position: absolute;
+  right: 20%;
+  top: 5%;
+  width: 150px;
+  height: 40px;
+  font-size: 15px;
+  background-color: #9fb5d5;
+  #link {
+    text-decoration: none;
+    color: black;
   }
 `;
 
