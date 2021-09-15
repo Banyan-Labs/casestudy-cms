@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 
 import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
 
-const DetailPage = ({ data }) => {
-  console.log(data);
+const DetailPage = ({ data, buttonsToRender }) => {
   let { projectId } = useParams();
   console.log(projectId);
   return (
@@ -47,17 +46,23 @@ const DetailPage = ({ data }) => {
                 <Text>{project.appendices}</Text>
 
                 <Links>
-                  <Link to='#' id='edit'>
-                    Edit
-                  </Link>
-
-                  <Link to='#' id='delete'>
-                    Delete
-                  </Link>
-
-                  <Link to='/' id='home'>
-                    Home
-                  </Link>
+                  {buttonsToRender === 'frontend' ? (
+                    <Link to='/' id='home'>
+                      Home
+                    </Link>
+                  ) : (
+                    <div>
+                      <Link to='#' id='edit'>
+                        Edit
+                      </Link>
+                      <Link to='#' id='delete'>
+                        Delete
+                      </Link>
+                      <Link to='/' id='home'>
+                        Home
+                      </Link>
+                    </div>
+                  )}
                 </Links>
               </ProjectContainer>
             </div>
@@ -69,6 +74,7 @@ const DetailPage = ({ data }) => {
 
 DetailPage.propTypes = {
   data: PropTypes.array,
+  buttonsToRender: PropTypes.string,
 };
 
 export default DetailPage;
