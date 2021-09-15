@@ -7,13 +7,11 @@ import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
 
 const DetailPage = ({ data, buttonsToRender }) => {
   let { projectId } = useParams();
-  console.log(projectId);
   return (
     <div>
       {data
         .filter((project) => project.id === projectId)
         .map((project, index) => {
-          console.log(project);
           return (
             <div key={index}>
               <ProjectContainer>
