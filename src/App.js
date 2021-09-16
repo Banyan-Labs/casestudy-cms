@@ -12,11 +12,13 @@ function App() {
         <Route path='/' exact>
           <HomePage data={projectData} buttonsToRender='frontend' />
         </Route>
+
         <Route path='/input-page' exact>
           <InputForm />
         </Route>
+
         <Route path='/details/:projectId' exact>
-          <DetailPage data={projectData} />
+          <DetailPage data={projectData} buttonsToRender='frontend' />
         </Route>
       </div>
     </Router>
