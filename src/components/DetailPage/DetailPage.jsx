@@ -1,12 +1,24 @@
 import React from 'react';
+import axios from ' axios ';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
 
+const caseStudyURL = '/localhost8080/cases/';
+
 const DetailPage = ({ data, buttonsToRender }) => {
+  const [post, setPost] = React.useState(null);
   let { projectId } = useParams();
+
+  React.useEffect(() => {
+    axios.get('http://caseStudyURL' + projectId).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
   return (
     <div>
       {data
