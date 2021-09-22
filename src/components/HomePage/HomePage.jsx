@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import AccountModal from '../AccountModal/AccountModal';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -14,9 +16,18 @@ import {
   CreateNewButton,
 } from './style';
 
-const HomePage = ({ data, buttonsToRender }) => {
+const HomePage = ({ buttonsToRender }) => {
   const [modalType, setModalType] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const url = 'http://localhost:8080/cases/';
+
+  const [caseStudyData, setCaseStudyData] = useState([]);
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setCaseStudyData(res.data);
+    });
+  }, []);
+
   const openModal = (type) => {
     setModalType(type);
     setModalOpen(true);
@@ -45,8 +56,8 @@ const HomePage = ({ data, buttonsToRender }) => {
 
       <div>
         <Header>Project Case Study</Header>
-        {data.map((project) => (
-          <CardBody key={project.name}>
+        {caseStudyData.map((project, index) => (
+          <CardBody key={index.name}>
             <CardInfo>
               <CardName>{project.name}</CardName>
               <CardDescription>{project.description}</CardDescription>

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-
+import axios from 'axios';
 import { InputLabel } from './InputLabel';
 import { Container, Button } from './style';
 
@@ -15,6 +15,25 @@ export default function InputForm() {
   const [implementation, setImplementation] = useState('');
   const [references, setReferences] = useState('');
   const [appendices, setAppendices] = useState('');
+  const baseURL = 'http://localhost:8080/cases/';
+  const postObject = {
+    name: projectName,
+    image: image,
+    description: description,
+    findings: findings,
+    discussion: discussion,
+    conclusion: conclusion,
+    recommendations: recommendations,
+    implementation: implementation,
+    references: references,
+    appendices: appendices,
+  };
+
+  function createPost() {
+    axios.post(baseURL, postObject).then((res) => {
+      console.log(res.data);
+    });
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -96,7 +115,7 @@ export default function InputForm() {
             onChangeType={setAppendices}
             inputType={'text'}
           />
-          <Button type='submit' value='Submit'>
+          <Button onClick={createPost} type='submit' value='Submit'>
             Submit
           </Button>
         </form>
