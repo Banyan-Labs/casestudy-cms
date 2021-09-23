@@ -57,7 +57,8 @@ const HomePage = ({ buttonsToRender }) => {
       <div>
         <Header>Project Case Study</Header>
         {caseStudyData.map((project, index) => (
-          <CardBody key={index.name}>
+          <CardBody key={index}>
+            <Link to={`/details/${project._id}`}>More Details</Link>
             <CardInfo>
               <CardName>{project.name}</CardName>
               <CardDescription>{project.description}</CardDescription>
