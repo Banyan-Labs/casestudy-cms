@@ -14,6 +14,7 @@ import {
   CardLogo,
   CardImage,
   CreateNewButton,
+  DetailButton,
 } from './style';
 
 const HomePage = ({ buttonsToRender }) => {
@@ -32,6 +33,7 @@ const HomePage = ({ buttonsToRender }) => {
     setModalType(type);
     setModalOpen(true);
   };
+
   return (
     <HomepageContainer>
       {buttonsToRender === 'frontend' ? (
@@ -58,12 +60,15 @@ const HomePage = ({ buttonsToRender }) => {
         <Header>Project Case Study</Header>
         {caseStudyData.map((project, index) => (
           <CardBody key={index}>
-            <Link to={`/details/${project._id}`}>More Details</Link>
+            <DetailButton>
+              <Link className='detailButtonLink' to={`/details/${project._id}`}>
+                Details
+              </Link>
+            </DetailButton>
             <CardInfo>
               <CardName>{project.name}</CardName>
               <CardDescription>{project.description}</CardDescription>
             </CardInfo>
-
             <CardLogo>
               <CardImage>
                 <img src={project.image} alt='Company Homepage' />
