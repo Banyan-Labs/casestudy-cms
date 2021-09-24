@@ -46,6 +46,7 @@ export const Header = styled.div`
   font-weight: 700;
   padding-top: 10%;
 `;
+
 export const CardBody = styled.div`
   width: 50%;
   height: 300px;
@@ -54,8 +55,8 @@ export const CardBody = styled.div`
   flex-direction: row;
   margin: 5% auto 0% auto;
   border: 1px black solid;
-  padding: 0% 1% 0% 5%;
 `;
+
 export const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,18 +64,39 @@ export const CardInfo = styled.div`
   align-items: center;
   width: 50%;
 `;
+
 export const CardName = styled.div`
   font-size: 40px;
   font-weight: normal;
 `;
+
 export const CardDescription = styled.div`
   font-size: 20px;
   font-weight: normal;
 `;
+
 export const CardLogo = styled.div`
   width: 400px;
   padding: 10%;
 `;
+
 export const CardImage = styled.div`
   display: flex;
+`;
+
+export const DetailButton = styled.div`
+  position: relative;
+  top: 82%;
+  left: 70%;
+  width: auto;
+  height: 30px;
+  background-color: lightgray;
+  border: 1px black solid;
+  padding: 0% 1% 0% 1%;
+  line-height: 2;
+  .detailButtonLink {
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+  }
 `;
