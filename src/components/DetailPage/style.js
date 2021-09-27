@@ -36,11 +36,14 @@ export const Text = styled.div`
 
 export const Links = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
   padding: 2%;
-  #delete {
-    margin-left: 20%;
-    margin-right: 20%;
+  .bottomControlBtn {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+  button {
+    font-size: 15px;
   }
 `;

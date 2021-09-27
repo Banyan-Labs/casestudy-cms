@@ -1,16 +1,43 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
 
-const DetailPage = ({ data, buttonsToRender }) => {
+const DetailPage = ({ buttonsToRender }) => {
   let { projectId } = useParams();
+  let history = useHistory();
+  const url = 'http://localhost:8080/cases/';
+
+  const [caseStudyData, setCaseStudyData] = useState([]);
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setCaseStudyData(res.data);
+    });
+  }, []);
+
+  const deletePost = () => {
+    axios.delete(url + projectId).then(() => {
+      alert('Are you sure you want to delete this project?');
+      history.push('/');
+    });
+  };
+
+  const routeBackHome = () => {
+    history.push('/');
+  };
+
+  const editFormPage = () => {
+    history.push('/input-page');
+  };
+
   return (
     <div>
-      {data
-        .filter((project) => project.id === projectId)
+      {caseStudyData
+        .filter((project) => project._id === projectId)
         .map((project, index) => {
           return (
             <div key={index}>
@@ -45,20 +72,18 @@ const DetailPage = ({ data, buttonsToRender }) => {
 
                 <Links>
                   {buttonsToRender === 'frontend' ? (
-                    <Link to='/' id='home'>
-                      Home
-                    </Link>
+                    <button onClick={routeBackHome}>Home</button>
                   ) : (
-                    <div>
-                      <Link to='#' id='edit'>
+                    <div className='bottomControlBtn'>
+                      <button onClick={editFormPage} id='editBtn'>
                         Edit
-                      </Link>
-                      <Link to='#' id='delete'>
+                      </button>
+                      <button onClick={deletePost} id='deleteBtn'>
                         Delete
-                      </Link>
-                      <Link to='/' id='home'>
+                      </button>
+                      <button onClick={routeBackHome} id='homeBtn'>
                         Home
-                      </Link>
+                      </button>
                     </div>
                   )}
                 </Links>
@@ -71,7 +96,6 @@ const DetailPage = ({ data, buttonsToRender }) => {
 };
 
 DetailPage.propTypes = {
-  data: PropTypes.array,
   buttonsToRender: PropTypes.string,
 };
 
