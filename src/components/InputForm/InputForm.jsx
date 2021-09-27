@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import { InputLabel } from './InputLabel';
 import { Container, Button } from './style';
 
@@ -34,10 +35,10 @@ export default function InputForm() {
       console.log(res.data);
     });
   }
-
+  const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event);
+    history.push('/');
   };
 
   return (
@@ -54,7 +55,7 @@ export default function InputForm() {
           />
           <InputLabel
             title={'Image'}
-            type={'file'}
+            type={'string'}
             idValue={'image'}
             onChangeType={setImage}
             inputType={'input'}
