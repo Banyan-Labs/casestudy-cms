@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AccountModal from '../AccountModal/AccountModal';
 import PropTypes from 'prop-types';
+import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
 import {
   HomepageContainer,
@@ -34,14 +35,16 @@ const HomePage = ({ buttonsToRender }) => {
     setModalOpen(true);
   };
 
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  console.log(isAuthenticated);
   return (
     <HomepageContainer>
       {buttonsToRender === 'frontend' ? (
         <div>
-          <button className='signUpBtn' onClick={() => openModal(0)}>
+          <button className='signUpBtn' onClick={() => loginWithRedirect()}>
             Sign Up
           </button>
-          <button className='signInBtn' onClick={() => openModal(1)}>
+          <button className='signInBtn' onClick={() => loginWithRedirect()}>
             Sign In
           </button>
           {modalOpen && (
@@ -87,3 +90,21 @@ HomePage.propTypes = {
 };
 
 export default HomePage;
+
+// import React from 'react';
+// import { useAuth0 } from '@auth0/auth0-react';
+
+// const LogoutButton = () => {
+
+//     const { logout, isAuthenticated } = useAuth0();
+
+//     return (
+//         isAuthenticated && (
+//         <button onClick={() => logout()}>
+//             Log Out
+//         </button>
+//         )
+//     )
+// }
+
+// export default LogoutButton;
