@@ -8,6 +8,10 @@ export const Container = styled.div`
   h1 {
     text-align: left;
     padding-left: 20%;
+  }
+  p {
+    text-align: left;
+    padding-left: 20%;
     padding-bottom: 2%;
   }
 `;

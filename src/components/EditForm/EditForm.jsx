@@ -61,6 +61,10 @@ export default function EditForm() {
   return (
     <Container>
       <h1>Edit The Project</h1>
+      <p>
+        Edit only fields that need to be change. If field it correct, then leave
+        blank.
+      </p>
       <div>
         <form onSubmit={handleSubmit}>
           <Label>Project Name: </Label>
