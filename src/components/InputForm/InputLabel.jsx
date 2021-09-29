@@ -19,7 +19,6 @@ export const InputLabel = ({
           name={idValue}
           inputType={'input'}
           onChange={(event) => onChangeType(event.target.value)}
-          required
         />
       ) : (
         <Textarea
