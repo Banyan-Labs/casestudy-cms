@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -30,7 +30,7 @@ const DetailPage = ({ buttonsToRender }) => {
   };
 
   const editFormPage = () => {
-    history.push('/edit-page');
+    history.push(`/edit-page/${projectId}`);
   };
 
   return (
