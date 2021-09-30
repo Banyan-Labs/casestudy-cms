@@ -7,9 +7,8 @@ import {
   Button,
   Label,
   Input,
-  EditTextarea,
   Textarea,
-} from '../EditForm/style';
+} from './style';
 
 export default function EditForm() {
   const [projectName, setProjectName] = useState(null);
