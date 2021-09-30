@@ -35,8 +35,9 @@ const HomePage = ({ buttonsToRender }) => {
     setModalOpen(true);
   };
 
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   console.log(isAuthenticated);
+
   return (
     <HomepageContainer>
       {buttonsToRender === 'frontend' ? (
@@ -46,6 +47,10 @@ const HomePage = ({ buttonsToRender }) => {
           </button>
           <button className='signInBtn' onClick={() => loginWithRedirect()}>
             Sign In
+          </button>
+
+          <button className='logoutBtn' onClick={() => logout()}>
+            Log Out
           </button>
           {modalOpen && (
             <AccountModal modalType={modalType} setModalType={setModalType} />
@@ -90,21 +95,3 @@ HomePage.propTypes = {
 };
 
 export default HomePage;
-
-// import React from 'react';
-// import { useAuth0 } from '@auth0/auth0-react';
-
-// const LogoutButton = () => {
-
-//     const { logout, isAuthenticated } = useAuth0();
-
-//     return (
-//         isAuthenticated && (
-//         <button onClick={() => logout()}>
-//             Log Out
-//         </button>
-//         )
-//     )
-// }
-
-// export default LogoutButton;

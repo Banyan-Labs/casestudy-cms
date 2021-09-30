@@ -23,6 +23,15 @@ export const HomepageContainer = styled.div`
     background-color: #9fb5d5;
     font-size: 20px;
   }
+  .logoutBtn {
+    position: absolute;
+    right: 7%;
+    top: 5%;
+    width: 150px;
+    height: 40px;
+    background-color: #9fb5d5;
+    font-size: 20px;
+  }
 `;
 
 export const CreateNewButton = styled.button`
