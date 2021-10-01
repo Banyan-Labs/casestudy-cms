@@ -65,17 +65,17 @@ const BackDetailPage = () => {
         <Text>{caseStudyData.appendices}</Text>
 
         <Links>
-            <div className='bottomControlBtn'>
-              <button onClick={editFormPage} id='editBtn'>
-                Edit
-              </button>
-              <button onClick={deletePost} id='deleteBtn'>
-                Delete
-              </button>
-              <button onClick={routeBackHome} id='homeBtn'>
-                Home
-              </button>
-            </div>
+          <div className='bottomControlBtn'>
+            <button onClick={editFormPage} id='editBtn'>
+              Edit
+            </button>
+            <button onClick={deletePost} id='deleteBtn'>
+              Delete
+            </button>
+            <button onClick={routeBackHome} id='homeBtn'>
+              Home
+            </button>
+          </div>
         </Links>
       </ProjectContainer>
     </div>

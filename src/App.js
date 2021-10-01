@@ -6,6 +6,8 @@ import FrontDetailPage from './components/FrontDetailPage/FrontDetailPage';
 import BackDetailPage from './components/BackDetailPage/BackDetailPage';
 import InputForm from './components/InputForm/InputForm';
 import EditForm from './components/EditForm/EditForm';
+import LoginButton from './components/LoginButton/LoginButton';
+import SignUpButton from './components/SignUpButton/SignUpButton';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <div>
         <Route path='/' exact>
           <FrontHomePage />
+          <LoginButton />
+          <SignUpButton />
         </Route>
 
         <Route path='/backHomePage' exact>
@@ -32,9 +36,8 @@ function App() {
         </Route>
 
         <Route path='/edit-page/:projectId' exact>
-          <EditForm  />
+          <EditForm />
         </Route>
-
       </div>
     </Router>
   );

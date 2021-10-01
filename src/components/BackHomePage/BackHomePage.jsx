@@ -47,7 +47,10 @@ const BackHomePage = () => {
         {caseStudyData.map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
-              <Link className='detailButtonLink' to={`/backDetails/${project._id}`}>
+              <Link
+                className='detailButtonLink'
+                to={`/backDetails/${project._id}`}
+              >
                 Details
               </Link>
             </DetailButton>
@@ -55,9 +58,9 @@ const BackHomePage = () => {
               <CardName>{project.name}</CardName>
               <CardDescription>{project.description}</CardDescription>
             </CardInfo>
-              <CardImage>
-                <img src={project.image} alt='Company Homepage' />
-              </CardImage>
+            <CardImage>
+              <img src={project.image} alt='Company Homepage' />
+            </CardImage>
           </CardBody>
         ))}
       </div>

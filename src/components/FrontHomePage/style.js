@@ -5,24 +5,6 @@ export const FrontHomepageContainer = styled.div`
   justify-content: center;
   background-color: #e4e4e4;
   padding-bottom: 3%;
-  .signUpBtn {
-    position: absolute;
-    right: 20%;
-    top: 5%;
-    width: 150px;
-    height: 40px;
-    background-color: #9fb5d5;
-    font-size: 20px;
-  }
-  .signInBtn {
-    position: absolute;
-    right: 33%;
-    top: 5%;
-    width: 150px;
-    height: 40px;
-    background-color: #9fb5d5;
-    font-size: 20px;
-  }
   .logoutBtn {
     position: absolute;
     right: 7%;

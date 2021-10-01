@@ -54,7 +54,7 @@ const FrontDetailPage = () => {
         <Text>{caseStudyData.appendices}</Text>
 
         <Links>
-            <button onClick={routeBackHome}>Home</button>
+          <button onClick={routeBackHome}>Home</button>
         </Links>
       </ProjectContainer>
     </div>

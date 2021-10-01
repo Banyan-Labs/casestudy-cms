@@ -29,29 +29,28 @@ const FrontHomePage = () => {
   //   history.push('/backHomePage')
   // }
 
-
-
-
-
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   console.log(isAuthenticated);
 
   return (
     <FrontHomepageContainer>
       <div>
-        <button className='signUpBtn' onClick={(test) => test + 1}>
+        {/* <button className='signUpBtn' onClick={(test) => test + 1}>
           Sign Up
         </button>
         <button className='signInBtn' onClick={() => loginWithRedirect()}>
           Sign In
-        </button>
+        </button> */}
       </div>
       <div>
         <Header>Project Case Study</Header>
         {caseStudyData.map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
-              <Link className='detailButtonLink' to={`/frontDetails/${project._id}`}>
+              <Link
+                className='detailButtonLink'
+                to={`/frontDetails/${project._id}`}
+              >
                 Details
               </Link>
             </DetailButton>
@@ -59,9 +58,9 @@ const FrontHomePage = () => {
               <CardName>{project.name}</CardName>
               <CardDescription>{project.description}</CardDescription>
             </CardInfo>
-              <CardImage>
-                <img src={project.image} alt='Company Homepage' />
-              </CardImage>
+            <CardImage>
+              <img src={project.image} alt='Company Homepage' />
+            </CardImage>
           </CardBody>
         ))}
       </div>
