@@ -54,7 +54,7 @@ export default function EditForm() {
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push(`/details/${projectId}`);
+    history.push(`/backDetails/${projectId}`);
   };
 
   return (
