@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -14,7 +13,7 @@ const DetailPage = ({ buttonsToRender }) => {
 
   const [caseStudyData, setCaseStudyData] = useState([]);
   useEffect(() => {
-    axios.get(url).then((res) => {
+    axios.get(url + projectId).then((res) => {
       setCaseStudyData(res.data);
     });
   }, []);
@@ -31,66 +30,58 @@ const DetailPage = ({ buttonsToRender }) => {
   };
 
   const editFormPage = () => {
-    history.push('/input-page');
+    history.push(`/edit-page/${projectId}`);
   };
 
   return (
     <div>
-      {caseStudyData
-        .filter((project) => project._id === projectId)
-        .map((project, index) => {
-          return (
-            <div key={index}>
-              <ProjectContainer>
-                <Name>{project.name}</Name>
+      <ProjectContainer>
+        <Name>{caseStudyData.name}</Name>
 
-                <Image src={project.image} alt='Company Homepage'></Image>
+        <Image src={caseStudyData.image} alt='Company Homepage'></Image>
 
-                <Label>Description: </Label>
-                <Text>{project.description}</Text>
+        <Label>Description: </Label>
+        <Text>{caseStudyData.description}</Text>
 
-                <Label>Findings: </Label>
-                <Text>{project.findings}</Text>
+        <Label>Findings: </Label>
+        <Text>{caseStudyData.findings}</Text>
 
-                <Label>Discussion: </Label>
-                <Text>{project.discussion}</Text>
+        <Label>Discussion: </Label>
+        <Text>{caseStudyData.discussion}</Text>
 
-                <Label>Conclusion: </Label>
-                <Text>{project.conclusion}</Text>
+        <Label>Conclusion: </Label>
+        <Text>{caseStudyData.conclusion}</Text>
 
-                <Label>Recommendations: </Label>
-                <Text>{project.recommendations}</Text>
+        <Label>Recommendations: </Label>
+        <Text>{caseStudyData.recommendations}</Text>
 
-                <Label>Description: </Label>
-                <Text>{project.implementation}</Text>
+        <Label>Description: </Label>
+        <Text>{caseStudyData.implementation}</Text>
 
-                <Label>References: </Label>
-                <Text>{project.references}</Text>
+        <Label>References: </Label>
+        <Text>{caseStudyData.references}</Text>
 
-                <Label>Appendices: </Label>
-                <Text>{project.appendices}</Text>
+        <Label>Appendices: </Label>
+        <Text>{caseStudyData.appendices}</Text>
 
-                <Links>
-                  {buttonsToRender === 'frontend' ? (
-                    <button onClick={routeBackHome}>Home</button>
-                  ) : (
-                    <div className='bottomControlBtn'>
-                      <button onClick={editFormPage} id='editBtn'>
-                        Edit
-                      </button>
-                      <button onClick={deletePost} id='deleteBtn'>
-                        Delete
-                      </button>
-                      <button onClick={routeBackHome} id='homeBtn'>
-                        Home
-                      </button>
-                    </div>
-                  )}
-                </Links>
-              </ProjectContainer>
+        <Links>
+          {buttonsToRender === 'frontend' ? (
+            <button onClick={routeBackHome}>Home</button>
+          ) : (
+            <div className='bottomControlBtn'>
+              <button onClick={editFormPage} id='editBtn'>
+                Edit
+              </button>
+              <button onClick={deletePost} id='deleteBtn'>
+                Delete
+              </button>
+              <button onClick={routeBackHome} id='homeBtn'>
+                Home
+              </button>
             </div>
-          );
-        })}
+          )}
+        </Links>
+      </ProjectContainer>
     </div>
   );
 };
