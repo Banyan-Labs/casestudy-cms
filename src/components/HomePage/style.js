@@ -63,25 +63,31 @@ export const CardInfo = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 50%;
+  padding-bottom: 5%;
 `;
 
 export const CardName = styled.div`
   font-size: 40px;
   font-weight: normal;
+  padding-top: 6%;
 `;
 
 export const CardDescription = styled.div`
   font-size: 20px;
   font-weight: normal;
-`;
-
-export const CardLogo = styled.div`
-  width: 400px;
-  padding: 10%;
+  overflow: auto;
+  padding-top: 6%;
 `;
 
 export const CardImage = styled.div`
   display: flex;
+  width: 400px;
+  padding: 5%;
+  img {
+    width: 300px;
+    height: 180px;
+
+  }
 `;
 
 export const DetailButton = styled.div`
