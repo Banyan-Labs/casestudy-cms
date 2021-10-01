@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import AccountModal from '../AccountModal/AccountModal';
 import PropTypes from 'prop-types';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
@@ -18,9 +17,7 @@ import {
   DetailButton,
 } from './style';
 
-const HomePage = ({ buttonsToRender }) => {
-  const [modalType, setModalType] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false);
+const HomePage = () => {
   const url = 'http://localhost:8080/cases/';
 
   const [caseStudyData, setCaseStudyData] = useState([]);
@@ -30,40 +27,28 @@ const HomePage = ({ buttonsToRender }) => {
     });
   }, []);
 
-  const openModal = (type) => {
-    setModalType(type);
-    setModalOpen(true);
-  };
-
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   console.log(isAuthenticated);
 
   return (
     <HomepageContainer>
-      {buttonsToRender === 'frontend' ? (
-        <div>
-          <button className='signUpBtn' onClick={() => loginWithRedirect()}>
-            Sign Up
-          </button>
-          <button className='signInBtn' onClick={() => loginWithRedirect()}>
-            Sign In
-          </button>
-
-          <button className='logoutBtn' onClick={() => logout()}>
-            Log Out
-          </button>
-          {modalOpen && (
-            <AccountModal modalType={modalType} setModalType={setModalType} />
-          )}
-        </div>
-      ) : (
-        <CreateNewButton>
-          <Link to={'/input-page'} id={'link'}>
-            Create New Project
-          </Link>
-        </CreateNewButton>
-      )}
-
+      <div>
+        <button className='signUpBtn' onClick={() => loginWithRedirect()}>
+          Sign Up
+        </button>
+        <button className='signInBtn' onClick={() => loginWithRedirect()}>
+          Sign In
+        </button>
+        <button className='logoutBtn' onClick={() => logout()}>
+          Log Out
+        </button>
+      </div>
+      <CreateNewButton>
+        <Link to={'/input-page'} id={'link'}>
+          Create New Project
+        </Link>
+      </CreateNewButton>
+      )
       <div>
         <Header>Project Case Study</Header>
         {caseStudyData.map((project, index) => (
@@ -95,3 +80,8 @@ HomePage.propTypes = {
 };
 
 export default HomePage;
+
+// if logged in --- front end
+// if not ---- back end
+// how to determine if someone is authenticated with auth0
+// how to verify authentification with auth0

@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div>
         <Route path='/' exact>
-          <HomePage data={projectData} buttonsToRender='frontend' />
+          <HomePage data={projectData} />
         </Route>
 
         <Route path='/input-page' exact>
