@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
-import { useAuth0 } from '@auth0/auth0-react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+// import { useAuth0 } from '@auth0/auth0-react';
 import {
   BackHomepageContainer,
   Header,
@@ -18,7 +17,7 @@ import {
 
 const BackHomePage = () => {
   const url = 'http://localhost:8080/cases/';
-
+  let history = useHistory();
   const [caseStudyData, setCaseStudyData] = useState([]);
   useEffect(() => {
     axios.get(url).then((res) => {
@@ -26,13 +25,17 @@ const BackHomePage = () => {
     });
   }, []);
 
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
-  console.log(isAuthenticated);
+  const logoutButton = () => {
+    history.push('/');
+  };
+
+  // const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  // console.log(isAuthenticated);
 
   return (
     <BackHomepageContainer>
       <div>
-        <button className='logoutBtn' onClick={() => logout()}>
+        <button className='logoutBtn' onClick={logoutButton}>
           Log Out
         </button>
       </div>
@@ -41,7 +44,6 @@ const BackHomePage = () => {
           Create New Project
         </Link>
       </CreateNewButton>
-      )
       <div>
         <Header>Project Case Study</Header>
         {caseStudyData.map((project, index) => (
@@ -68,14 +70,4 @@ const BackHomePage = () => {
   );
 };
 
-BackHomePage.propTypes = {
-  data: PropTypes.array,
-  buttonsToRender: PropTypes.string,
-};
-
 export default BackHomePage;
-
-// if logged in --- front end
-// if not ---- back end
-// how to determine if someone is authenticated with auth0
-// how to verify authentification with auth0
