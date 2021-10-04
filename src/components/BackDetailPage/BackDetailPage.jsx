@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
 
-const DetailPage = ({ buttonsToRender }) => {
+const BackDetailPage = () => {
   let { projectId } = useParams();
   let history = useHistory();
   const url = 'http://localhost:8080/cases/';
@@ -21,12 +21,12 @@ const DetailPage = ({ buttonsToRender }) => {
   const deletePost = () => {
     axios.delete(url + projectId).then(() => {
       alert('Are you sure you want to delete this project?');
-      history.push('/');
+      history.push('/backHomePage');
     });
   };
 
   const routeBackHome = () => {
-    history.push('/');
+    history.push('/backHomePage');
   };
 
   const editFormPage = () => {
@@ -65,29 +65,25 @@ const DetailPage = ({ buttonsToRender }) => {
         <Text>{caseStudyData.appendices}</Text>
 
         <Links>
-          {buttonsToRender === 'frontend' ? (
-            <button onClick={routeBackHome}>Home</button>
-          ) : (
-            <div className='bottomControlBtn'>
-              <button onClick={editFormPage} id='editBtn'>
-                Edit
-              </button>
-              <button onClick={deletePost} id='deleteBtn'>
-                Delete
-              </button>
-              <button onClick={routeBackHome} id='homeBtn'>
-                Home
-              </button>
-            </div>
-          )}
+          <div className='bottomControlBtn'>
+            <button onClick={editFormPage} id='editBtn'>
+              Edit
+            </button>
+            <button onClick={deletePost} id='deleteBtn'>
+              Delete
+            </button>
+            <button onClick={routeBackHome} id='homeBtn'>
+              Home
+            </button>
+          </div>
         </Links>
       </ProjectContainer>
     </div>
   );
 };
 
-DetailPage.propTypes = {
+BackDetailPage.propTypes = {
   buttonsToRender: PropTypes.string,
 };
 
-export default DetailPage;
+export default BackDetailPage;

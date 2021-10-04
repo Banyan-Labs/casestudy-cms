@@ -2,13 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
-import {
-  Container,
-  Button,
-  Label,
-  Input,
-  Textarea,
-} from './style';
+import { Container, Button, Label, Input, Textarea } from './style';
 
 export default function EditForm() {
   const [projectName, setProjectName] = useState(null);
@@ -54,7 +48,7 @@ export default function EditForm() {
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push(`/details/${projectId}`);
+    history.push(`/backDetails/${projectId}`);
   };
 
   return (
