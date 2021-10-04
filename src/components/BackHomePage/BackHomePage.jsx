@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory, Link } from 'react-router-dom';
-// import { useAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import {
   BackHomepageContainer,
   Header,
@@ -13,11 +13,11 @@ import {
   CardImage,
   CreateNewButton,
   DetailButton,
+  LogIn,
 } from './style';
 
 const BackHomePage = () => {
   const url = 'http://localhost:8080/cases/';
-  let history = useHistory();
   const [caseStudyData, setCaseStudyData] = useState([]);
   useEffect(() => {
     axios.get(url).then((res) => {
@@ -25,19 +25,17 @@ const BackHomePage = () => {
     });
   }, []);
 
-  const logoutButton = () => {
-    history.push('/');
-  };
-
-  // const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
-  // console.log(isAuthenticated);
+  const { logout, isAuthenticated } = useAuth0();
+  console.log(isAuthenticated);
 
   return (
     <BackHomepageContainer>
       <div>
-        <button className='logoutBtn' onClick={logoutButton}>
-          Log Out
-        </button>
+        <LogIn>
+          <Link id={'link'} to={'/'} onClick={() => logout()}>
+            Log Out
+          </Link>
+        </LogIn>
       </div>
       <CreateNewButton>
         <Link to={'/input-page'} id={'link'}>

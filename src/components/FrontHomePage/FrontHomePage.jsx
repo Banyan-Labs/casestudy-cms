@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { useAuth0 } from '@auth0/auth0-react';
 import { Link, useHistory } from 'react-router-dom';
 import {
   FrontHomepageContainer,
@@ -23,12 +22,6 @@ const FrontHomePage = () => {
       setCaseStudyData(res.data);
     });
   }, []);
-
-  const linkBackHomePage = () => {
-    history.push('/backHomePage');
-  };
-
-  // const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
     <FrontHomepageContainer>

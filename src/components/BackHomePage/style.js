@@ -23,14 +23,18 @@ export const BackHomepageContainer = styled.div`
     background-color: #9fb5d5;
     font-size: 20px;
   }
-  .logoutBtn {
-    position: absolute;
-    right: 7%;
-    top: 5%;
-    width: 150px;
-    height: 40px;
-    background-color: #9fb5d5;
-    font-size: 20px;
+`;
+export const LogIn = styled.button`
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #9fb5d5;
+  #link {
+    text-decoration: none;
+    color: black;
   }
 `;
 
