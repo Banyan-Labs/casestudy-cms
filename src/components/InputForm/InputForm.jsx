@@ -38,7 +38,7 @@ export default function InputForm() {
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push('/');
+    history.push('/backHomePage');
   };
 
   return (

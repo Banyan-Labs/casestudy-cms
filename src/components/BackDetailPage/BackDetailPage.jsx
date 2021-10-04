@@ -21,12 +21,12 @@ const BackDetailPage = () => {
   const deletePost = () => {
     axios.delete(url + projectId).then(() => {
       alert('Are you sure you want to delete this project?');
-      history.push('/');
+      history.push('/backHomePage');
     });
   };
 
   const routeBackHome = () => {
-    history.push('/');
+    history.push('/backHomePage');
   };
 
   const editFormPage = () => {
