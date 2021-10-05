@@ -26,7 +26,7 @@ const FrontHomePage = () => {
   return (
     <FrontHomepageContainer>
       <div>
-        <Header>Project Case Study</Header>
+        <Header>Project Case Studies</Header>
         {caseStudyData.map((project, index) => (
           <CardBody key={index}>
             <DetailButton>

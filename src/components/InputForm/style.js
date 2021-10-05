@@ -5,10 +5,12 @@ export const Container = styled.div`
   padding-top: 3%;
   display: flex;
   flex-direction: column;
+  font-family: candara;
   h1 {
     text-align: left;
     padding-left: 20%;
     padding-bottom: 2%;
+    text-decoration: underline;
   }
 `;
 
@@ -29,6 +31,7 @@ export const Input = styled.input`
   border-width: 2px;
   border-style: inset;
   border-color: (rgb(118, 118, 118), rgb(133, 133, 133));
+  border-radius: 5px;
 `;
 
 export const Textarea = styled.textarea`
@@ -40,6 +43,7 @@ export const Textarea = styled.textarea`
   border-width: 2px;
   border-style: inset;
   border-color: (rgb(118, 118, 118), rgb(133, 133, 133));
+  border-radius: 5px;
 `;
 
 export const Button = styled.button`
@@ -48,4 +52,6 @@ export const Button = styled.button`
   margin: 5% auto;
   font-size: 20px;
   background-color: #9fb5d5;
+  border-radius: 5px;
+  font-family: candara;
 `;

@@ -39,11 +39,11 @@ const BackHomePage = () => {
       </div>
       <CreateNewButton>
         <Link to={'/input-page'} id={'link'}>
-          Create New Project
+          Create New
         </Link>
       </CreateNewButton>
       <div>
-        <Header>Project Case Study</Header>
+        <Header>Project Case Studies</Header>
         {caseStudyData.map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
