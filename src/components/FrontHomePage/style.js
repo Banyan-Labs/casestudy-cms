@@ -14,6 +14,7 @@ export const Header = styled.div`
   font-size: 50px;
   font-weight: 700;
   padding-top: 10%;
+  text-decoration: underline;
 `;
 
 export const CardBody = styled.div`
@@ -58,6 +59,7 @@ export const CardImage = styled.div`
     width: 300px;
     height: 180px;
     border-radius: 5px;
+    border: 1px black solid;
   }
 `;
 

@@ -19,13 +19,15 @@ export const Name = styled.div`
 export const Image = styled.img`
   margin: 2% auto 2% auto;
   width: 600px;
+  border: 1px black solid;
 `;
 
 export const Label = styled.div`
   display: flex;
   align-items: flex-start;
   margin-left: 15%;
-  font-size: 20px;
+  font-size: 22px;
+  text-decoration: underline;
 `;
 
 export const Text = styled.div`
