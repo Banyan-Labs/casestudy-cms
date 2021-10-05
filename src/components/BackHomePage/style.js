@@ -56,6 +56,7 @@ export const CardBody = styled.div`
   flex-direction: row;
   margin: 5% auto 0% auto;
   border: 1px black solid;
+  border-radius: 5px;
 `;
 
 export const CardInfo = styled.div`
@@ -89,6 +90,7 @@ export const CardImage = styled.div`
   img {
     width: 300px;
     height: 180px;
+    border-radius: 5px;
   }
 `;
 
