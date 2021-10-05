@@ -38,6 +38,20 @@ const BackDetailPage = () => {
       <ProjectContainer>
         <Name>{caseStudyData.name}</Name>
 
+        <Links>
+          <div className='bottomControlBtn'>
+            <button onClick={editFormPage} id='editBtn'>
+              Edit
+            </button>
+            <button onClick={deletePost} id='deleteBtn'>
+              Delete
+            </button>
+            <button onClick={routeBackHome} id='homeBtn'>
+              Home
+            </button>
+          </div>
+        </Links>
+
         <Image src={caseStudyData.image} alt='Company Homepage'></Image>
 
         <Label>Description: </Label>
@@ -63,20 +77,6 @@ const BackDetailPage = () => {
 
         <Label>Appendices: </Label>
         <Text>{caseStudyData.appendices}</Text>
-
-        <Links>
-          <div className='bottomControlBtn'>
-            <button onClick={editFormPage} id='editBtn'>
-              Edit
-            </button>
-            <button onClick={deletePost} id='deleteBtn'>
-              Delete
-            </button>
-            <button onClick={routeBackHome} id='homeBtn'>
-              Home
-            </button>
-          </div>
-        </Links>
       </ProjectContainer>
     </div>
   );

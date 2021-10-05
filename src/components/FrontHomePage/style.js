@@ -3,31 +3,9 @@ import styled from 'styled-components';
 export const FrontHomepageContainer = styled.div`
   display: flex;
   justify-content: center;
+  font-family: Candara;
   background-color: #e4e4e4;
   padding-bottom: 3%;
-  .logoutBtn {
-    position: absolute;
-    right: 7%;
-    top: 5%;
-    width: 150px;
-    height: 40px;
-    background-color: #9fb5d5;
-    font-size: 20px;
-  }
-`;
-
-export const CreateNewButton = styled.button`
-  position: absolute;
-  right: 20%;
-  top: 5%;
-  width: 150px;
-  height: 40px;
-  font-size: 15px;
-  background-color: #9fb5d5;
-  #link {
-    text-decoration: none;
-    color: black;
-  }
 `;
 
 export const Header = styled.div`
@@ -46,6 +24,7 @@ export const CardBody = styled.div`
   flex-direction: row;
   margin: 5% auto 0% auto;
   border: 1px black solid;
+  border-radius: 5px;
 `;
 export const CardInfo = styled.div`
   display: flex;
@@ -60,13 +39,15 @@ export const CardName = styled.div`
   font-size: 40px;
   font-weight: normal;
   padding-top: 6%;
+  text-align: center;
 `;
 
 export const CardDescription = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   overflow: auto;
   padding-top: 6%;
+  text-align: center;
 `;
 
 export const CardImage = styled.div`
@@ -76,6 +57,7 @@ export const CardImage = styled.div`
   img {
     width: 300px;
     height: 180px;
+    border-radius: 5px;
   }
 `;
 
@@ -89,6 +71,7 @@ export const DetailButton = styled.div`
   border: 1px black solid;
   padding: 0% 1% 0% 1%;
   line-height: 2;
+  border-radius: 5px;
   .detailButtonLink {
     font-size: 16px;
     text-decoration: none;

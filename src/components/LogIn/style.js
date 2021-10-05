@@ -9,5 +9,7 @@ export const SignInContainer = styled.div`
     height: 40px;
     background-color: #9fb5d5;
     font-size: 20px;
+    border-radius: 5px;
+    font-family: candara;
   }
 `;

@@ -6,6 +6,7 @@ export const ProjectContainer = styled.div`
   background-color: #e4e4e4;
   padding-top: 4%;
   padding-bottom: 30px;
+  font-family: candara;
 `;
 
 export const Name = styled.div`
@@ -45,5 +46,7 @@ export const Links = styled.div`
   }
   button {
     font-size: 15px;
+    border-radius: 5px;
+    font-family: candara;
   }
 `;
