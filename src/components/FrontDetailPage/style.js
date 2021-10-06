@@ -22,6 +22,7 @@ export const Header = styled.div`
     font-size: 15px;
     font-family: candara;
     border-radius: 5px;
+    margin-left: 50px;
   }
 `;
 
