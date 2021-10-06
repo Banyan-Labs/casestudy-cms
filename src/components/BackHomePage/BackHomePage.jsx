@@ -44,7 +44,7 @@ const BackHomePage = () => {
       </CreateNewButton>
       <div>
         <Header>Project Case Study</Header>
-        {caseStudyData.map((project, index) => (
+        {caseStudyData.reverse().map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
               <Link

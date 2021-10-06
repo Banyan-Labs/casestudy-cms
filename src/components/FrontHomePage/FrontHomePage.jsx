@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   FrontHomepageContainer,
   Header,
@@ -15,7 +15,6 @@ import {
 
 const FrontHomePage = () => {
   const url = 'http://localhost:8080/cases/';
-  const history = useHistory();
   const [caseStudyData, setCaseStudyData] = useState([]);
   useEffect(() => {
     axios.get(url).then((res) => {
@@ -27,7 +26,7 @@ const FrontHomePage = () => {
     <FrontHomepageContainer>
       <div>
         <Header>Project Case Study</Header>
-        {caseStudyData.map((project, index) => (
+        {caseStudyData.reverse().map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
               <Link
