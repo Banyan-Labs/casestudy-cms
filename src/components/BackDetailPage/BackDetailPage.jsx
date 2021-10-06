@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
+import { ProjectContainer, Label, Header, Image, Text } from './style';
 
 const BackDetailPage = () => {
   let { projectId } = useParams();
@@ -36,21 +36,22 @@ const BackDetailPage = () => {
   return (
     <div>
       <ProjectContainer>
-        <Name>{caseStudyData.name}</Name>
-
-        <Links>
+        <Header>
+          {caseStudyData.name}
           <div className='bottomControlBtn'>
             <button onClick={editFormPage} id='editBtn'>
               Edit
             </button>
+            <br />
             <button onClick={deletePost} id='deleteBtn'>
               Delete
             </button>
+            <br />
             <button onClick={routeBackHome} id='homeBtn'>
               Home
             </button>
           </div>
-        </Links>
+        </Header>
 
         <Image src={caseStudyData.image} alt='Company Homepage'></Image>
 

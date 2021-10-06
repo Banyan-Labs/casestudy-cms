@@ -9,11 +9,21 @@ export const ProjectContainer = styled.div`
   font-family: candara;
 `;
 
-export const Name = styled.div`
+export const Header = styled.div`
+  position: fixed;
   display: flex;
+  flex-direction: column;
+  width: 300px;
   justify-content: center;
   text-decoration: underline;
   font-size: 50px;
+  align-items: flex-start;
+  button {
+    font-size: 15px;
+    font-family: candara;
+    border-radius: 5px;
+    margin-left: 50px;
+  }
 `;
 
 export const Image = styled.img`
@@ -35,20 +45,4 @@ export const Text = styled.div`
   width: 70%;
   height: auto;
   margin: 2% auto;
-`;
-
-export const Links = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2%;
-  .bottomControlBtn {
-    display: flex;
-    justify-content: space-evenly;
-    width: 50%;
-  }
-  button {
-    font-size: 15px;
-    font-family: candara;
-    border-radius: 5px;
-  }
 `;
