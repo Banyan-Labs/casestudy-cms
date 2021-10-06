@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
+import { ProjectContainer, Label, Header, Image, Text } from './style';
 
 const FrontDetailPage = () => {
   let { projectId } = useParams();
@@ -25,8 +25,10 @@ const FrontDetailPage = () => {
   return (
     <div>
       <ProjectContainer>
-        <Name>{caseStudyData.name}</Name>
-
+        <Header>
+          {caseStudyData.name}
+          <button onClick={routeBackHome}>Home</button>
+        </Header>
         <Image src={caseStudyData.image} alt='Company Homepage'></Image>
 
         <Label>Description: </Label>
@@ -52,10 +54,6 @@ const FrontDetailPage = () => {
 
         <Label>Appendices: </Label>
         <Text>{caseStudyData.appendices}</Text>
-
-        <Links>
-          <button onClick={routeBackHome}>Home</button>
-        </Links>
       </ProjectContainer>
     </div>
   );
