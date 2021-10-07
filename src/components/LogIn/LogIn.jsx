@@ -15,7 +15,7 @@ const LoginButton = () => {
   return (
     <SignInContainer>
       <button className='signInBtn' onClick={() => loginWithRedirect()}>
-        Log In/Sign Up
+        Log In / Sign Up
       </button>
     </SignInContainer>
   );
