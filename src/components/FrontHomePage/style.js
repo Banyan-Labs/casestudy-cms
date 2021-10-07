@@ -8,6 +8,10 @@ export const FrontHomepageContainer = styled.div`
   padding-bottom: 3%;
 `;
 
+export const SearchBar = styled.div`
+
+`;
+
 export const Header = styled.div`
   display: flex;
   justify-content: center;
@@ -80,8 +84,3 @@ export const DetailButton = styled.div`
     color: black;
   }
 `;
-
-export const SearchBarInput = styled.div``;
-
-export const Wrapper = styled.div``;
-// export const Input = styled.div``;
