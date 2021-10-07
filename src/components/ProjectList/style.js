@@ -1,22 +1,5 @@
 import styled from 'styled-components';
 
-export const FrontHomepageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  font-family: Candara;
-  background-color: #e4e4e4;
-  padding-bottom: 3%;
-`;
-
-export const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
-  font-weight: 700;
-  padding-top: 10%;
-  text-decoration: underline;
-`;
-
 export const CardBody = styled.div`
   width: 50%;
   height: 300px;
@@ -80,8 +63,3 @@ export const DetailButton = styled.div`
     color: black;
   }
 `;
-
-export const SearchBarInput = styled.div``;
-
-export const Wrapper = styled.div``;
-// export const Input = styled.div``;

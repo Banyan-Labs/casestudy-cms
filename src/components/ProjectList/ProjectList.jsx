@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import SearchBar from '../SearchBar/SearchBar';
+// import FrontHomePage from './../FrontHomePage/FrontHomePage';
 
 import {
-  FrontHomepageContainer,
-  Header,
   CardBody,
   CardInfo,
   CardName,
@@ -16,23 +12,12 @@ import {
   DetailButton,
 } from './style';
 
-const FrontHomePage = () => {
-  const url = 'http://localhost:8080/cases/';
-  const [caseStudyData, setCaseStudyData] = useState([]);
-  useEffect(() => {
-    axios.get(url).then((res) => {
-      setCaseStudyData(res.data);
-    });
-  }, []);
-
-  return (
-    <FrontHomepageContainer>
-
-      <div>
-
-
-        <Header>Project Case Studies</Header>
-        {caseStudyData.map((project, index) => (
+const ProjectList = ({ caseStudyData, searchQuery }) => (
+    <div>
+    {caseStudyData.filter((data) =>
+      new RegExp(`^${searchQuery}`, 'i')
+        .test(data.caseStudy[0].projectTitle)
+        .map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
               <Link
@@ -50,12 +35,18 @@ const FrontHomePage = () => {
               <img src={project.image} alt='Company Homepage' />
             </CardImage>
           </CardBody>
-        ))}
-      </div>
-    </FrontHomepageContainer>
-  );
+        ))
+    )}
+  </div>
+);
+
+ProjectList.propTypes = {
+  caseStudyData: PropTypes.string,
+  searchQuery: PropTypes.string,
 };
-FrontHomePage.propTypes = {
-  updateInput: PropTypes.string,
-};
-export default FrontHomePage;
+
+export default ProjectList;
+
+
+
+

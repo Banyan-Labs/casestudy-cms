@@ -7,12 +7,16 @@ import BackDetailPage from './components/BackDetailPage/BackDetailPage';
 import InputForm from './components/InputForm/InputForm';
 import EditForm from './components/EditForm/EditForm';
 import LogIn from './components/LogIn/LogIn';
+import SearchBar from './components/SearchBar/SearchBar';
+// import ProjectList from './components/ProjectList/ProjectList'
 
 function App() {
+
   return (
     <Router>
       <div>
         <Route path='/' exact>
+          <SearchBar />
           <FrontHomePage />
           <LogIn />
         </Route>

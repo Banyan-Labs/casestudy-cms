@@ -1,20 +1,30 @@
 import styled from 'styled-components';
 
-export const FrontHomepageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  font-family: Candara;
-  background-color: #e4e4e4;
-  padding-bottom: 3%;
+export const Container = styled.form`
+position: absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #C4C4C4;
+  padding: 10px;
+  height: 20px;
+  width: 300px;
+  border-radius: 6px;
+  margin-right: 2%;
 `;
-
-export const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
-  font-weight: 700;
-  padding-top: 10%;
-  text-decoration: underline;
+export const Input = styled.input`
+position: absolute;
+  font-size: 14px;
+  line-height: 1;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  color: black;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  &::placeholder {
+    color: black;
+  }
 `;
 
 export const CardBody = styled.div`
@@ -80,8 +90,3 @@ export const DetailButton = styled.div`
     color: black;
   }
 `;
-
-export const SearchBarInput = styled.div``;
-
-export const Wrapper = styled.div``;
-// export const Input = styled.div``;
