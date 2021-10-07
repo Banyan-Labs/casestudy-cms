@@ -13,11 +13,13 @@ import {
   CreateNewButton,
   DetailButton,
   LogIn,
+  SearchBar
 } from './style';
 
 const BackHomePage = () => {
   const url = 'http://localhost:8080/cases/';
   const [caseStudyData, setCaseStudyData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState([]);
   useEffect(() => {
     axios.get(url).then((res) => {
       setCaseStudyData(res.data);
@@ -42,8 +44,27 @@ const BackHomePage = () => {
         </Link>
       </CreateNewButton>
       <div>
-        <Header>Project Case Study</Header>
-        {caseStudyData.reverse().map((project, index) => (
+      <SearchBar>
+          <input
+            type='text'
+            placeholder={'Search...'}
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+        </SearchBar>
+        <Header>Project Case Studies</Header>
+        {caseStudyData
+          .filter((val) => {
+            if (searchTerm == '') {
+              return val;
+            } else if (
+              val.name.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .reverse().map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
               <Link
