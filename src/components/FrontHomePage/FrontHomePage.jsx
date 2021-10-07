@@ -46,7 +46,7 @@ const FrontHomePage = () => {
               return val;
             }
           })
-          .map((project, index) => (
+          .reverse().map((project, index) => (
             <CardBody key={index}>
               <DetailButton>
                 <Link
