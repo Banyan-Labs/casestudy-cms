@@ -4,26 +4,35 @@ export const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #e4e4e4;
-  padding-top: 4%;
   padding-bottom: 30px;
   font-family: candara;
 `;
 
 export const Header = styled.div`
   position: fixed;
+  top: 0;
+  left: 8px;
+  right: 8px;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  justify-content: center;
   text-decoration: underline;
   font-size: 50px;
-  align-items: flex-start;
+  align-items: center;
+  background-color: #9fb5d5;
+  border: 1px black solid;
   button {
     font-size: 15px;
     font-family: candara;
     border-radius: 5px;
-    margin-left: 50px;
+    margin-left: 40px;
+    margin-bottom: 10px;
   }
+`;
+
+export const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
 `;
 
 export const Image = styled.img`
