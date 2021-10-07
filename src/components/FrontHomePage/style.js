@@ -8,6 +8,10 @@ export const FrontHomepageContainer = styled.div`
   padding-bottom: 3%;
 `;
 
+export const SearchBar = styled.div`
+
+`;
+
 export const Header = styled.div`
   display: flex;
   justify-content: center;

@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+
 
 import { ProjectContainer, Label, Name, Image, Text, Links } from './style';
 
@@ -12,6 +12,7 @@ const FrontDetailPage = () => {
   const url = 'http://localhost:8080/cases/';
 
   const [caseStudyData, setCaseStudyData] = useState([]);
+
   useEffect(() => {
     axios.get(url + projectId).then((res) => {
       setCaseStudyData(res.data);
