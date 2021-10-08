@@ -27,6 +27,10 @@ export const LogIn = styled.button`
   }
 `;
 
+export const SearchBar = styled.div`
+
+`;
+
 export const CreateNewButton = styled.button`
   position: absolute;
   right: 24%;

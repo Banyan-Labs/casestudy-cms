@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -14,11 +13,13 @@ import {
   CreateNewButton,
   DetailButton,
   LogIn,
+  SearchBar
 } from './style';
 
 const BackHomePage = () => {
   const url = 'http://localhost:8080/cases/';
   const [caseStudyData, setCaseStudyData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState([]);
   useEffect(() => {
     axios.get(url).then((res) => {
       setCaseStudyData(res.data);
@@ -42,9 +43,32 @@ const BackHomePage = () => {
           Create New
         </Link>
       </CreateNewButton>
+
       <div id='top'>
+
+      <div>
+      <SearchBar>
+          <input
+            type='text'
+            placeholder={'Search...'}
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+        </SearchBar>
+
         <Header>Project Case Studies</Header>
-        {caseStudyData.map((project, index) => (
+        {caseStudyData
+          .filter((val) => {
+            if (searchTerm == '') {
+              return val;
+            } else if (
+              val.name.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .reverse().map((project, index) => (
           <CardBody key={index}>
             <DetailButton>
               <Link

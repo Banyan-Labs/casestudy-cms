@@ -11,6 +11,10 @@ export const FrontHomepageContainer = styled.div`
   }
 `;
 
+export const SearchBar = styled.div`
+
+`;
+
 export const Header = styled.div`
   display: flex;
   justify-content: center;
