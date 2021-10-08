@@ -25,7 +25,7 @@ const FrontHomePage = () => {
 
   return (
     <FrontHomepageContainer>
-      <div>
+      <div id='top'>
         <Header>Project Case Studies</Header>
         {caseStudyData.map((project, index) => (
           <CardBody key={index}>
@@ -46,6 +46,7 @@ const FrontHomePage = () => {
             </CardImage>
           </CardBody>
         ))}
+        <a href='#top'>Back to Top</a>
       </div>
     </FrontHomepageContainer>
   );

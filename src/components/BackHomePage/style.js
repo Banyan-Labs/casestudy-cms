@@ -6,6 +6,9 @@ export const BackHomepageContainer = styled.div`
   background-color: #e4e4e4;
   font-family: Candara;
   padding-bottom: 3%;
+  #top {
+    text-align: center;
+  }
 `;
 
 export const LogIn = styled.button`

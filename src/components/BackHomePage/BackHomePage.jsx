@@ -42,7 +42,7 @@ const BackHomePage = () => {
           Create New
         </Link>
       </CreateNewButton>
-      <div>
+      <div id='top'>
         <Header>Project Case Studies</Header>
         {caseStudyData.map((project, index) => (
           <CardBody key={index}>
@@ -63,6 +63,7 @@ const BackHomePage = () => {
             </CardImage>
           </CardBody>
         ))}
+        <a href='#top'>Back to Top</a>
       </div>
     </BackHomepageContainer>
   );
