@@ -43,6 +43,9 @@ const BackHomePage = () => {
           Create New
         </Link>
       </CreateNewButton>
+
+      <div id='top'>
+
       <div>
       <SearchBar>
           <input
@@ -53,6 +56,7 @@ const BackHomePage = () => {
             }}
           />
         </SearchBar>
+
         <Header>Project Case Studies</Header>
         {caseStudyData
           .filter((val) => {
@@ -83,6 +87,7 @@ const BackHomePage = () => {
             </CardImage>
           </CardBody>
         ))}
+        <a href='#top'>Back to Top</a>
       </div>
     </BackHomepageContainer>
   );

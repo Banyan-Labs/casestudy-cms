@@ -25,6 +25,30 @@ const FrontHomePage = () => {
 
   return (
     <FrontHomepageContainer>
+
+      <div id='top'>
+        <Header>Project Case Studies</Header>
+        {caseStudyData.map((project, index) => (
+          <CardBody key={index}>
+            <DetailButton>
+              <Link
+                className='detailButtonLink'
+                to={`/frontDetails/${project._id}`}
+              >
+                Details
+              </Link>
+            </DetailButton>
+            <CardInfo>
+              <CardName>{project.name}</CardName>
+              <CardDescription>{project.description}</CardDescription>
+            </CardInfo>
+            <CardImage>
+              <img src={project.image} alt='Company Homepage' />
+            </CardImage>
+          </CardBody>
+        ))}
+        <a href='#top'>Back to Top</a>
+
       <div>
         <SearchBar>
           <input
@@ -65,6 +89,7 @@ const FrontHomePage = () => {
               </CardImage>
             </CardBody>
           ))}
+
       </div>
     </FrontHomepageContainer>
   );

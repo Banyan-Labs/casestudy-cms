@@ -6,6 +6,9 @@ export const FrontHomepageContainer = styled.div`
   font-family: Candara;
   background-color: #e4e4e4;
   padding-bottom: 3%;
+  #top {
+    text-align: center;
+  }
 `;
 
 export const SearchBar = styled.div`
