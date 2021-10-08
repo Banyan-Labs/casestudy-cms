@@ -26,45 +26,48 @@ const FrontHomePage = () => {
   return (
     <FrontHomepageContainer>
       <div>
-        <SearchBar>
-          <input
-            type='text'
-            placeholder={'Search...'}
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-            }}
-          />
-        </SearchBar>
-        <Header>Project Case Studies</Header>
-        {caseStudyData
-          .filter((val) => {
-            if (searchTerm == '') {
-              return val;
-            } else if (
-              val.name.toLowerCase().includes(searchTerm.toLowerCase())
-            ) {
-              return val;
-            }
-          })
-          .reverse().map((project, index) => (
-            <CardBody key={index}>
-              <DetailButton>
-                <Link
-                  className='detailButtonLink'
-                  to={`/frontDetails/${project._id}`}
-                >
-                  Details
-                </Link>
-              </DetailButton>
-              <CardInfo>
-                <CardName>{project.name}</CardName>
-                <CardDescription>{project.description}</CardDescription>
-              </CardInfo>
-              <CardImage>
-                <img src={project.image} alt='Company Homepage' />
-              </CardImage>
-            </CardBody>
-          ))}
+        <div className='navBar'>
+          <Header>Project Case Studies</Header>
+          <SearchBar>
+            <input
+              type='text'
+              placeholder={'Search...'}
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+          </SearchBar>
+        </div>
+        <div className='cards'>
+          {caseStudyData
+            .filter((val) => {
+              if (searchTerm == '') {
+                return val;
+              } else if (
+                val.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .reverse().map((project, index) => (
+              <CardBody key={index}>
+                <DetailButton>
+                  <Link
+                    className='detailButtonLink'
+                    to={`/frontDetails/${project._id}`}>
+                    Details
+                  </Link>
+                </DetailButton>
+                <CardInfo>
+                  <CardName>{project.name}</CardName>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardInfo>
+                <CardImage>
+                  <img src={project.image} alt='Company Homepage' />
+                </CardImage>
+              </CardBody>
+            ))}
+        </div>
       </div>
     </FrontHomepageContainer>
   );

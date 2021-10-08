@@ -12,7 +12,7 @@ import {
   CardImage,
   CreateNewButton,
   DetailButton,
-  LogIn,
+  LogOut,
   SearchBar
 } from './style';
 
@@ -32,57 +32,69 @@ const BackHomePage = () => {
   return (
     <BackHomepageContainer>
       <div>
-        <LogIn>
-          <Link id={'link'} to={'/'} onClick={() => logout()}>
-            Log Out
+        <div className='navBar'>
+          <Header>Project Case Studies</Header>
+          <SearchBar>
+            <input
+              type='text'
+              placeholder={'Search...'}
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+          </SearchBar>
+          <LogOut>
+            <Link id={'link'} to={'/'} onClick={() => logout()}>
+              Log Out
+            </Link>
+          </LogOut>
+        </div>
+        <CreateNewButton>
+          <Link to={'/input-page'} id={'link'}>
+            Create New
           </Link>
-        </LogIn>
-      </div>
-      <CreateNewButton>
-        <Link to={'/input-page'} id={'link'}>
-          Create New
-        </Link>
-      </CreateNewButton>
-      <div>
-      <SearchBar>
-          <input
-            type='text'
-            placeholder={'Search...'}
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-            }}
-          />
-        </SearchBar>
-        <Header>Project Case Studies</Header>
-        {caseStudyData
-          .filter((val) => {
-            if (searchTerm == '') {
-              return val;
-            } else if (
-              val.name.toLowerCase().includes(searchTerm.toLowerCase())
-            ) {
-              return val;
-            }
-          })
-          .reverse().map((project, index) => (
-          <CardBody key={index}>
-            <DetailButton>
-              <Link
-                className='detailButtonLink'
-                to={`/backDetails/${project._id}`}
-              >
-                Details
-              </Link>
-            </DetailButton>
-            <CardInfo>
-              <CardName>{project.name}</CardName>
-              <CardDescription>{project.description}</CardDescription>
-            </CardInfo>
-            <CardImage>
-              <img src={project.image} alt='Company Homepage' />
-            </CardImage>
-          </CardBody>
-        ))}
+        </CreateNewButton>
+        <div>
+          <SearchBar>
+            <input
+              type='text'
+              placeholder={'Search...'}
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+              }}
+            />
+          </SearchBar>
+        </div>
+        <div className='cards'>
+          {caseStudyData
+            .filter((val) => {
+              if (searchTerm == '') {
+                return val;
+              } else if (
+                val.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .reverse().map((project, index) => (
+              <CardBody key={index}>
+                <DetailButton>
+                  <Link
+                    className='detailButtonLink'
+                    to={`/backDetails/${project._id}`}>
+                    Details
+                  </Link>
+                </DetailButton>
+                <CardInfo>
+                  <CardName>{project.name}</CardName>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardInfo>
+                <CardImage>
+                  <img src={project.image} alt='Company Homepage' />
+                </CardImage>
+              </CardBody>
+            ))}
+        </div>
       </div>
     </BackHomepageContainer>
   );

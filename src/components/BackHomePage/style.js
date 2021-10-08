@@ -2,13 +2,24 @@ import styled from 'styled-components';
 
 export const BackHomepageContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: #e4e4e4;
   font-family: Candara;
+  background-color: #e4e4e4;
   padding-bottom: 3%;
+  .navBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #e4e4e4;
+    z-index: 3;
+  }
+  .cards {
+    margin-top:13%;
+  }
 `;
 
-export const LogIn = styled.button`
+export const LogOut = styled.button`
   position: absolute;
   right: 10%;
   top: 5%;
@@ -18,6 +29,8 @@ export const LogIn = styled.button`
   background-color: #9fb5d5;
   border-radius: 5px;
   font-family: candara;
+  z-index: 10;
+    position: fixed;
   #link {
     text-decoration: none;
     color: black;
@@ -25,7 +38,14 @@ export const LogIn = styled.button`
 `;
 
 export const SearchBar = styled.div`
-
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 10.3%;
+  margin-bottom: 2%;
+  input {
+    width: 20%;
+  }
 `;
 
 export const CreateNewButton = styled.button`
@@ -38,6 +58,8 @@ export const CreateNewButton = styled.button`
   background-color: #9fb5d5;
   font-family: candara;
   border-radius: 5px;
+  z-index: 10;
+    position: fixed;
   #link {
     text-decoration: none;
     color: black;
@@ -49,7 +71,8 @@ export const Header = styled.div`
   justify-content: center;
   font-size: 50px;
   font-weight: 700;
-  padding-top: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   text-decoration: underline;
 `;
 

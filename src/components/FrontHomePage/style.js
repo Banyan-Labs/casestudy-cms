@@ -2,14 +2,32 @@ import styled from 'styled-components';
 
 export const FrontHomepageContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   font-family: Candara;
   background-color: #e4e4e4;
   padding-bottom: 3%;
+  .navBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #e4e4e4;
+    z-index: 3;
+  }
+  .cards {
+    margin-top:13%;
+  }
 `;
 
 export const SearchBar = styled.div`
-
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 10.3%;
+  margin-bottom: 2%;
+  input {
+    width: 20%;
+  }
 `;
 
 export const Header = styled.div`
@@ -17,8 +35,9 @@ export const Header = styled.div`
   justify-content: center;
   font-size: 50px;
   font-weight: 700;
-  padding-top: 10%;
+  padding-top: 2%;
   text-decoration: underline;
+  padding-bottom: 2%;
 `;
 
 export const CardBody = styled.div`
