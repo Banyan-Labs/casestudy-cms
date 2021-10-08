@@ -15,7 +15,7 @@ export const BackHomepageContainer = styled.div`
     z-index: 3;
   }
   .cards {
-    margin-top:13%;
+    margin-top: 13%;
   }
 `;
 
@@ -30,7 +30,7 @@ export const LogOut = styled.button`
   border-radius: 5px;
   font-family: candara;
   z-index: 10;
-    position: fixed;
+  position: fixed;
   #link {
     text-decoration: none;
     color: black;
@@ -59,7 +59,7 @@ export const CreateNewButton = styled.button`
   font-family: candara;
   border-radius: 5px;
   z-index: 10;
-    position: fixed;
+  position: fixed;
   #link {
     text-decoration: none;
     color: black;

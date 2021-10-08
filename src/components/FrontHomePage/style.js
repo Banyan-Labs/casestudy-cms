@@ -15,7 +15,7 @@ export const FrontHomepageContainer = styled.div`
     z-index: 3;
   }
   .cards {
-    margin-top:13%;
+    margin-top: 13%;
   }
 `;
 

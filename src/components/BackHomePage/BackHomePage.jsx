@@ -13,7 +13,7 @@ import {
   CreateNewButton,
   DetailButton,
   LogOut,
-  SearchBar
+  SearchBar,
 } from './style';
 
 const BackHomePage = () => {
@@ -76,12 +76,14 @@ const BackHomePage = () => {
                 return val;
               }
             })
-            .reverse().map((project, index) => (
+            .reverse()
+            .map((project, index) => (
               <CardBody key={index}>
                 <DetailButton>
                   <Link
                     className='detailButtonLink'
-                    to={`/backDetails/${project._id}`}>
+                    to={`/backDetails/${project._id}`}
+                  >
                     Details
                   </Link>
                 </DetailButton>

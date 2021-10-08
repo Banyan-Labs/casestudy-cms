@@ -49,12 +49,14 @@ const FrontHomePage = () => {
                 return val;
               }
             })
-            .reverse().map((project, index) => (
+            .reverse()
+            .map((project, index) => (
               <CardBody key={index}>
                 <DetailButton>
                   <Link
                     className='detailButtonLink'
-                    to={`/frontDetails/${project._id}`}>
+                    to={`/frontDetails/${project._id}`}
+                  >
                     Details
                   </Link>
                 </DetailButton>

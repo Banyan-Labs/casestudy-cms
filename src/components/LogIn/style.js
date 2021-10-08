@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SignInContainer = styled.div`
-
   .signInBtn {
     position: absolute;
     right: 10%;
